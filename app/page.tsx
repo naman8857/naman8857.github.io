@@ -9,8 +9,8 @@ import {
   Check,
   CircuitBoard,
   Cpu,
-  Database,
   Download,
+  DraftingCompass,
   ExternalLink,
   FileText,
   GitBranch,
@@ -19,8 +19,10 @@ import {
   PanelsTopLeft,
   RadioTower,
   Route,
+  RulerDimensionLine,
   Sparkles,
   Thermometer,
+  Waypoints,
   Workflow,
   type LucideIcon,
 } from 'lucide-react';
@@ -55,7 +57,7 @@ type Experience = {
   points: string[];
 };
 
-const navItems = ['Home', 'Projects', 'Skills', 'Experience', 'Contact'];
+const navItems = ['Home', 'Skills', 'Experience', 'Projects', 'Contact'];
 
 const projects: Project[] = [
   {
@@ -225,6 +227,29 @@ const reasons = [
     title: 'I learn fast and communicate clearly.',
     text: 'I explain technical ideas clearly and build solutions that are useful, maintainable, and easy to understand.',
     icon: Sparkles,
+  },
+];
+
+const targetRoles = [
+  {
+    title: 'Electrical / Power Systems Co-op',
+    text: 'AutoCAD drawings, ETAP studies, load calculations, electrical design review, and power distribution support.',
+    icon: Waypoints,
+  },
+  {
+    title: 'Instrumentation & Controls Intern',
+    text: 'Field troubleshooting, sensor signals, EHT controllers, PLC logic, reliability, and validation workflows.',
+    icon: RadioTower,
+  },
+  {
+    title: 'Embedded Hardware Intern',
+    text: 'ESP32 prototypes, optical sensing, analog conditioning, PCB design, breadboard testing, and C/C++ logic.',
+    icon: CircuitBoard,
+  },
+  {
+    title: 'Automation / Data Analyst Co-op',
+    text: 'Power BI dashboards, Power Automate workflows, SharePoint systems, SQL/Python, and process improvement.',
+    icon: Workflow,
   },
 ];
 
@@ -407,35 +432,35 @@ function RobotCrew() {
 
 function DashboardVisual() {
   const nodes = [
-    { label: 'ESP32', icon: Cpu, tone: 'text-cyan-300' },
-    { label: 'Sensors', icon: RadioTower, tone: 'text-emerald-300' },
-    { label: 'PCB Design', icon: CircuitBoard, tone: 'text-amber-300' },
-    { label: 'Power BI', icon: BarChart3, tone: 'text-sky-300' },
-    { label: 'Power Automate', icon: Workflow, tone: 'text-rose-300' },
-    { label: 'Data Flow', icon: Database, tone: 'text-violet-300' },
+    { label: 'AutoCAD', icon: DraftingCompass, tone: 'text-cyan-300' },
+    { label: 'ETAP Studies', icon: Waypoints, tone: 'text-emerald-300' },
+    { label: 'KiCAD PCB', icon: CircuitBoard, tone: 'text-amber-300' },
+    { label: 'PSpice', icon: RadioTower, tone: 'text-sky-300' },
+    { label: 'MATLAB', icon: BarChart3, tone: 'text-rose-300' },
+    { label: 'Revit / DIALux', icon: RulerDimensionLine, tone: 'text-violet-300' },
   ];
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      initial={false}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-      className="relative mx-auto w-full max-w-[520px] lg:pr-8"
+      className="relative mx-auto w-full max-w-[340px] overflow-hidden min-[390px]:max-w-[350px] sm:max-w-[520px] lg:overflow-visible lg:pr-8"
     >
       <div className="absolute inset-x-8 -top-8 h-24 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="relative overflow-hidden rounded-lg border border-white/12 bg-zinc-950/80 p-4 shadow-2xl shadow-black/50 backdrop-blur">
-        <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3">
+      <div className="relative overflow-hidden rounded-lg border border-white/12 bg-zinc-950/80 p-3 shadow-2xl shadow-black/50 backdrop-blur sm:p-4">
+        <div className="mb-4 flex flex-col gap-3 border-b border-white/10 pb-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">System dashboard</p>
-            <h3 className="mt-1 text-lg font-semibold text-white">Engineering signal chain</h3>
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Skill dashboard</p>
+            <h3 className="mt-1 text-lg font-semibold text-white">Electrical engineering toolkit</h3>
           </div>
-          <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-200">
+          <div className="flex w-fit items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-            Live
+            Internship-ready
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {nodes.map((node) => {
             const Icon = node.icon;
             return (
@@ -456,8 +481,8 @@ function DashboardVisual() {
         <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-lg border border-white/10 bg-black/25 p-4">
             <div className="mb-4 flex items-center justify-between text-xs text-zinc-400">
-              <span>Load profile</span>
-              <span>12 samples</span>
+              <span>Power study profile</span>
+              <span>ETAP</span>
             </div>
             <div className="flex h-24 items-end gap-2">
               {[42, 56, 36, 68, 74, 52, 82, 61, 70, 86, 64, 78].map((height, index) => (
@@ -470,9 +495,9 @@ function DashboardVisual() {
             </div>
           </div>
           <div className="rounded-lg border border-white/10 bg-black/25 p-4">
-            <p className="text-xs text-zinc-400">Pipeline</p>
+            <p className="text-xs text-zinc-400">Design workflow</p>
             <div className="mt-3 space-y-3 text-sm">
-              {['Sense', 'Process', 'Visualize'].map((step) => (
+              {['Model', 'Validate', 'Document'].map((step) => (
                 <div key={step} className="flex items-center gap-2 text-zinc-200">
                   <Check className="h-4 w-4 text-emerald-300" />
                   {step}
@@ -492,8 +517,8 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_-10%,rgba(56,189,248,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.12),transparent_28%),linear-gradient(180deg,#050506_0%,#09090b_45%,#050506_100%)]" />
       <RobotCrew />
 
-      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-zinc-950/65 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <a href="#home" className="text-sm sm:text-base" aria-label="Naman Arora home">
             <PremiumName compact />
           </a>
@@ -518,15 +543,15 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="home" className="px-6 pt-28 md:pt-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 pb-16 md:pb-24 lg:grid-cols-[1.05fr_0.95fr]">
+      <section id="home" className="px-5 pt-24 sm:px-6 md:pt-32">
+        <div className="mx-auto grid max-w-7xl items-center gap-9 pb-12 md:gap-12 md:pb-24 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="max-w-3xl"
+            className="min-w-0 max-w-[340px] overflow-hidden min-[390px]:max-w-[350px] sm:max-w-3xl"
           >
-            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-xs font-medium text-zinc-300 shadow-lg shadow-black/20 sm:text-sm">
+            <div className="mb-6 flex w-full max-w-full items-center gap-2 overflow-hidden rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-xs font-medium text-zinc-300 shadow-lg shadow-black/20 sm:inline-flex sm:w-auto sm:text-sm">
               <Sparkles className="h-4 w-4 shrink-0 text-cyan-300" />
               <span className="truncate">
                 Electrical Engineering &bull; Embedded Systems &bull; Automation &bull; Data
@@ -535,26 +560,33 @@ export default function Home() {
             <div className="mb-5">
               <PremiumName />
             </div>
-            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="max-w-full break-words [overflow-wrap:anywhere] text-[2rem] font-semibold leading-[1.08] tracking-tight text-white min-[390px]:text-[2.15rem] sm:text-5xl md:text-6xl lg:text-7xl">
               Engineering practical systems across hardware, data, and automation.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+            <p className="mt-6 max-w-full break-words [overflow-wrap:anywhere] text-[0.95rem] leading-7 text-zinc-300 md:max-w-2xl md:text-lg">
               I&apos;m Naman Arora, an Electrical Engineering student at Memorial
               University of Newfoundland with a 3.95/4.0 GPA. I build real-world
               systems using embedded hardware, automation workflows, data analysis,
               and electrical engineering fundamentals.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+                href="#skills"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200 sm:w-auto"
               >
-                View Projects
+                View Skills
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
+                href="#experience"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto"
+              >
+                Experience
+                <BriefcaseBusiness className="h-4 w-4" />
+              </a>
+              <a
                 href="/Naman-Arora-Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
@@ -566,7 +598,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-label="Portfolio proof points" className="px-6 pb-16">
+      <section aria-label="Portfolio proof points" className="px-4 pb-12 sm:px-6 md:pb-16">
         <motion.div
           {...fadeUp}
           className="mx-auto grid max-w-6xl gap-3 rounded-lg border border-white/10 bg-white/[0.035] p-3 backdrop-blur md:grid-cols-4"
@@ -574,8 +606,8 @@ export default function Home() {
           {[
             ['3.95/4.0 GPA', 'Resume verified'],
             ['Electrical Engineering', 'Memorial University'],
-            ['Hardware + Automation Projects', 'Embedded systems'],
-            ['Data + Business Experience', 'Dashboards and workflows'],
+            ['Electrical Design Tools', 'AutoCAD, ETAP, KiCAD'],
+            ['Hands-on Project Evidence', 'Photos, reports, GitHub'],
           ].map(([value, label]) => (
             <div key={value} className="rounded-lg border border-white/8 bg-black/20 p-4">
               <p className="text-lg font-semibold text-white">{value}</p>
@@ -585,138 +617,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section id="projects" className="px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Featured projects"
-            title="Case-study cards for practical engineering work."
-            text="A compact view of hardware, embedded systems, data visualization, and automation projects."
-          />
-
-          <div className="grid gap-4 lg:grid-cols-3">
-            {projects.map((project) => {
-              const Icon = project.icon;
-              return (
-                <motion.article
-                  key={project.title}
-                  {...fadeUp}
-                  className={`rounded-lg border border-white/10 bg-zinc-950/70 p-5 shadow-xl shadow-black/20 transition hover:border-white/20 ${
-                    project.featured ? 'lg:col-span-2' : ''
-                  }`}
-                >
-                  <div className="mb-5 flex items-start justify-between gap-4">
-                    <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
-                        {project.category}
-                      </p>
-                      <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
-                        {project.title}
-                      </h3>
-                    </div>
-                    <div className="rounded-lg border border-white/10 bg-white/[0.05] p-2 text-cyan-200">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4 text-sm leading-6 text-zinc-400 md:grid-cols-2">
-                    <div>
-                      <p className="font-semibold text-zinc-200">Problem</p>
-                      <p className="mt-1">{project.problem}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-zinc-200">Built</p>
-                      <p className="mt-1">{project.built}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-zinc-200">Impact</p>
-                      <p className="mt-1">{project.impact}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-zinc-200">Tools</p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {project.tools.map((tool) => (
-                          <Pill key={tool}>{tool}</Pill>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  {project.image ? (
-                    <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white">
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} preview`}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto object-contain"
-                      />
-                    </div>
-                  ) : null}
-                  {project.gallery ? (
-                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                      {project.gallery.map((image) => (
-                        <figure
-                          key={image.src}
-                          className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]"
-                        >
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width={900}
-                            height={650}
-                            className="aspect-[4/3] w-full object-cover"
-                          />
-                          <figcaption className="border-t border-white/10 px-3 py-2 text-xs font-medium text-zinc-400">
-                            {image.label}
-                          </figcaption>
-                        </figure>
-                      ))}
-                    </div>
-                  ) : null}
-                  {project.highlights ? (
-                    <div className="mt-5 rounded-2xl border border-white/10 bg-black/20 p-4">
-                      <p className="mb-3 text-sm font-semibold text-zinc-200">
-                        Most important engineering details
-                      </p>
-                      <div className="space-y-2">
-                        {project.highlights.map((highlight) => (
-                          <div key={highlight} className="flex gap-2 text-sm leading-6 text-zinc-400">
-                            <Check className="mt-1 h-4 w-4 shrink-0 text-emerald-300" />
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-                    >
-                      View Repo
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                    {project.docUrl ? (
-                      <a
-                        href={project.docUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-                      >
-                        {project.docLabel ?? 'View Brochure'}
-                        <FileText className="h-4 w-4" />
-                      </a>
-                    ) : null}
-                  </div>
-                </motion.article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" className="px-6 py-16 md:py-20">
+      <section id="skills" className="px-4 py-12 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Skills"
@@ -750,7 +651,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="px-6 py-16 md:py-20">
+      <section id="experience" className="px-4 py-12 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Experience"
@@ -794,7 +695,168 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-20">
+      <section id="projects" className="px-4 py-12 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Featured projects"
+            title="Project proof after the professional story."
+            text="High-signal engineering evidence: what problem existed, what was built, how it was validated, and where to inspect the work."
+          />
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {projects.map((project) => {
+              const Icon = project.icon;
+              return (
+                <motion.article
+                  key={project.title}
+                  {...fadeUp}
+                  className={`rounded-lg border border-white/10 bg-zinc-950/70 p-4 shadow-xl shadow-black/20 transition hover:border-white/20 sm:p-5 ${
+                    project.featured ? 'lg:col-span-2' : ''
+                  }`}
+                >
+                  <div className="mb-5 flex items-start justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                        {project.category}
+                      </p>
+                      <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
+                        {project.title}
+                      </h3>
+                    </div>
+                    <div className="shrink-0 rounded-lg border border-white/10 bg-white/[0.05] p-2 text-cyan-200">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 text-sm leading-6 text-zinc-400 md:grid-cols-2">
+                    <div>
+                      <p className="font-semibold text-zinc-200">Problem</p>
+                      <p className="mt-1">{project.problem}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-zinc-200">Built</p>
+                      <p className="mt-1">{project.built}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-zinc-200">Impact</p>
+                      <p className="mt-1">{project.impact}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-zinc-200">Tools</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {project.tools.map((tool) => (
+                          <Pill key={tool}>{tool}</Pill>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  {project.image ? (
+                    <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white sm:rounded-3xl">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        width={1200}
+                        height={800}
+                        className="max-h-[360px] w-full object-contain sm:max-h-[520px]"
+                      />
+                    </div>
+                  ) : null}
+                  {project.gallery ? (
+                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                      {project.gallery.map((image) => (
+                        <figure
+                          key={image.src}
+                          className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]"
+                        >
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={900}
+                            height={650}
+                            className="aspect-[4/3] w-full object-cover"
+                          />
+                          <figcaption className="border-t border-white/10 px-3 py-2 text-xs font-medium text-zinc-400">
+                            {image.label}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
+                  {project.highlights ? (
+                    <div className="mt-5 rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="mb-3 text-sm font-semibold text-zinc-200">
+                        Most important engineering details
+                      </p>
+                      <div className="space-y-2">
+                        {project.highlights.map((highlight) => (
+                          <div key={highlight} className="flex gap-2 text-sm leading-6 text-zinc-400">
+                            <Check className="mt-1 h-4 w-4 shrink-0 text-emerald-300" />
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      View Repo
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                    {project.docUrl ? (
+                      <a
+                        href={project.docUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                      >
+                        {project.docLabel ?? 'View Brochure'}
+                        <FileText className="h-4 w-4" />
+                      </a>
+                    ) : null}
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="Internship fit"
+            title="Built around the roles electrical teams actually screen for."
+            text="The portfolio now surfaces verified tools, work experience, and hands-on project proof before asking a recruiter to inspect project details."
+          />
+          <div className="grid gap-4 md:grid-cols-2">
+            {targetRoles.map((role) => {
+              const Icon = role.icon;
+              return (
+                <motion.article
+                  key={role.title}
+                  {...fadeUp}
+                  className="rounded-lg border border-white/10 bg-white/[0.035] p-5"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="rounded-lg border border-white/10 bg-zinc-950 p-2 text-cyan-200">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{role.title}</h3>
+                  </div>
+                  <p className="text-sm leading-6 text-zinc-400">{role.text}</p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Why hire me"
@@ -820,7 +882,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-6 py-16 md:py-24">
+      <section id="contact" className="px-4 py-12 sm:px-6 md:py-24">
         <motion.div
           {...fadeUp}
           className="mx-auto max-w-4xl rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025))] p-6 text-center shadow-2xl shadow-black/30 md:p-10"

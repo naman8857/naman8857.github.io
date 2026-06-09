@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Naman Arora - Electrical Engineering Portfolio",
   description: "Electrical Engineering student at Memorial University of Newfoundland building practical systems across hardware, data, and automation.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

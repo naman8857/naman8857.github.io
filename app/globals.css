@@ -22,12 +22,24 @@
   box-sizing: border-box;
 }
 
+main,
+section,
+div,
+article,
+figure {
+  min-width: 0;
+}
+
 html {
+  width: 100%;
+  max-width: 100vw;
   scroll-behavior: smooth;
   background: var(--background);
 }
 
 body {
+  width: 100%;
+  max-width: 100vw;
   min-width: 320px;
   overflow-x: hidden;
   background: var(--background);
