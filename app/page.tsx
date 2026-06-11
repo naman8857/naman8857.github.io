@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   BarChart3,
@@ -19,7 +19,6 @@ import {
   PanelsTopLeft,
   RadioTower,
   Route,
-  RulerDimensionLine,
   Sparkles,
   Thermometer,
   Waypoints,
@@ -310,134 +309,23 @@ function PremiumName({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function RobotCrew() {
-  const { scrollYProgress } = useScroll();
-  const signalY = useSpring(useTransform(scrollYProgress, [0, 1], [92, 610]), { stiffness: 70, damping: 18 });
-  const signalX = useSpring(useTransform(scrollYProgress, [0, 0.45, 1], [0, -64, -14]), { stiffness: 70, damping: 18 });
-  const signalRotate = useSpring(useTransform(scrollYProgress, [0, 1], [-8, 22]), { stiffness: 80, damping: 18 });
-
-  const powerY = useSpring(useTransform(scrollYProgress, [0, 1], [190, 42]), { stiffness: 70, damping: 18 });
-  const powerX = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [-8, -92, -22]), { stiffness: 70, damping: 18 });
-  const powerRotate = useSpring(useTransform(scrollYProgress, [0, 1], [10, -24]), { stiffness: 80, damping: 18 });
-
-  const pcbY = useSpring(useTransform(scrollYProgress, [0, 1], [315, 690]), { stiffness: 70, damping: 18 });
-  const pcbX = useSpring(useTransform(scrollYProgress, [0, 0.55, 1], [-126, -34, -118]), { stiffness: 70, damping: 18 });
-  const pcbRotate = useSpring(useTransform(scrollYProgress, [0, 1], [-16, 18]), { stiffness: 80, damping: 18 });
-
-  const dataY = useSpring(useTransform(scrollYProgress, [0, 1], [470, 210]), { stiffness: 70, damping: 18 });
-  const dataX = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [-46, -150, -76]), { stiffness: 70, damping: 18 });
-  const dataRotate = useSpring(useTransform(scrollYProgress, [0, 1], [14, -18]), { stiffness: 80, damping: 18 });
-
-  const flowY = useSpring(useTransform(scrollYProgress, [0, 1], [34, 430]), { stiffness: 70, damping: 18 });
-  const flowX = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [-176, -112, -194]), { stiffness: 70, damping: 18 });
-  const flowRotate = useSpring(useTransform(scrollYProgress, [0, 1], [-4, 28]), { stiffness: 80, damping: 18 });
-
-  const bots = [
-    {
-      name: 'Signal',
-      x: signalX,
-      y: signalY,
-      rotate: signalRotate,
-      body: 'from-cyan-200 to-sky-500',
-      visor: 'from-white to-cyan-100',
-      delay: 0,
-      scale: 0.92,
-    },
-    {
-      name: 'Power',
-      x: powerX,
-      y: powerY,
-      rotate: powerRotate,
-      body: 'from-emerald-200 to-teal-500',
-      visor: 'from-white to-emerald-100',
-      delay: 0.25,
-      scale: 0.78,
-    },
-    {
-      name: 'PCB',
-      x: pcbX,
-      y: pcbY,
-      rotate: pcbRotate,
-      body: 'from-amber-200 to-orange-500',
-      visor: 'from-white to-amber-100',
-      delay: 0.5,
-      scale: 0.72,
-    },
-    {
-      name: 'Data',
-      x: dataX,
-      y: dataY,
-      rotate: dataRotate,
-      body: 'from-violet-200 to-fuchsia-500',
-      visor: 'from-white to-violet-100',
-      delay: 0.75,
-      scale: 0.68,
-    },
-    {
-      name: 'Flow',
-      x: flowX,
-      y: flowY,
-      rotate: flowRotate,
-      body: 'from-rose-200 to-red-500',
-      visor: 'from-white to-rose-100',
-      delay: 1,
-      scale: 0.62,
-    },
-  ];
-
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-y-0 right-0 z-20 hidden w-60 overflow-visible lg:block xl:w-72"
-    >
-      <div className="absolute right-8 top-24 h-96 w-44 rounded-full bg-cyan-300/10 blur-3xl" />
-      {bots.map((bot) => (
-        <motion.div
-          key={bot.name}
-          style={{ x: bot.x, y: bot.y, rotate: bot.rotate, scale: bot.scale }}
-          className="absolute right-5 top-0"
-        >
-          <motion.div
-            animate={{ y: [0, -7, 0] }}
-            transition={{
-              duration: 3.2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: bot.delay,
-            }}
-            className="relative h-28 w-20 drop-shadow-2xl"
-          >
-            <div
-              className={`absolute inset-x-2 top-3 h-20 rounded-[1.6rem] border border-white/30 bg-gradient-to-b ${bot.body} shadow-2xl shadow-black/35`}
-            >
-              <div
-                className={`absolute left-3 top-4 h-7 w-11 rounded-full border border-white/60 bg-gradient-to-br ${bot.visor} shadow-inner shadow-cyan-950/20`}
-              />
-              <div className="absolute bottom-3 left-1/2 h-1.5 w-8 -translate-x-1/2 rounded-full bg-white/45" />
-            </div>
-            <div className="absolute left-0 top-12 h-8 w-4 rounded-full border border-white/20 bg-white/20" />
-            <div className="absolute right-0 top-12 h-8 w-4 rounded-full border border-white/20 bg-white/20" />
-            <div className="absolute bottom-0 left-5 h-7 w-4 rounded-b-xl bg-zinc-300" />
-            <div className="absolute bottom-0 right-5 h-7 w-4 rounded-b-xl bg-zinc-300" />
-            <div className="absolute -bottom-2 left-1/2 h-3 w-14 -translate-x-1/2 rounded-full bg-cyan-200/25 blur-md" />
-            <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-zinc-950/70 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70">
-              {bot.name}
-            </span>
-          </motion.div>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
 function DashboardVisual() {
-  const nodes = [
-    { label: 'AutoCAD', icon: DraftingCompass, tone: 'text-cyan-300' },
-    { label: 'ETAP Studies', icon: Waypoints, tone: 'text-emerald-300' },
-    { label: 'KiCAD PCB', icon: CircuitBoard, tone: 'text-amber-300' },
-    { label: 'PSpice', icon: RadioTower, tone: 'text-sky-300' },
-    { label: 'MATLAB', icon: BarChart3, tone: 'text-rose-300' },
-    { label: 'Revit / DIALux', icon: RulerDimensionLine, tone: 'text-violet-300' },
+  const capabilities = [
+    {
+      title: 'Electrical design',
+      detail: 'AutoCAD drawings, load calculations, EHT circuits, Revit, DIALux.',
+      icon: DraftingCompass,
+    },
+    {
+      title: 'Power studies',
+      detail: 'ETAP load flow, short-circuit, arc-flash, and protection studies.',
+      icon: Waypoints,
+    },
+    {
+      title: 'Hardware validation',
+      detail: 'KiCAD, PSpice, oscilloscope testing, sensors, PCB design, ESP32.',
+      icon: CircuitBoard,
+    },
   ];
 
   return (
@@ -448,63 +336,49 @@ function DashboardVisual() {
       className="relative mx-auto w-full max-w-[340px] overflow-hidden min-[390px]:max-w-[350px] sm:max-w-[520px] lg:overflow-visible lg:pr-8"
     >
       <div className="absolute inset-x-8 -top-8 h-24 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="relative overflow-hidden rounded-lg border border-white/12 bg-zinc-950/80 p-3 shadow-2xl shadow-black/50 backdrop-blur sm:p-4">
+      <div className="relative overflow-hidden rounded-lg border border-white/12 bg-zinc-950/80 p-4 shadow-2xl shadow-black/50 backdrop-blur sm:p-5">
         <div className="mb-4 flex flex-col gap-3 border-b border-white/10 pb-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Skill dashboard</p>
-            <h3 className="mt-1 text-lg font-semibold text-white">Electrical engineering toolkit</h3>
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Engineering snapshot</p>
+            <h3 className="mt-1 text-lg font-semibold text-white">Electrical engineering evidence</h3>
           </div>
           <div className="flex w-fit items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-200">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-            Internship-ready
+            Resume-aligned
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {nodes.map((node) => {
-            const Icon = node.icon;
+        <div className="grid gap-3">
+          {capabilities.map((item) => {
+            const Icon = item.icon;
             return (
               <div
-                key={node.label}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-3"
+                key={item.title}
+                className="rounded-lg border border-white/10 bg-white/[0.035] p-4"
               >
-                <Icon className={`mb-3 h-5 w-5 ${node.tone}`} />
-                <p className="text-sm font-medium text-white">{node.label}</p>
-                <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-cyan-300 to-emerald-300" />
+                <div className="flex gap-3">
+                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-cyan-200" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">{item.title}</p>
+                    <p className="mt-1 text-sm leading-6 text-zinc-400">{item.detail}</p>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-4 grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-lg border border-white/10 bg-black/25 p-4">
-            <div className="mb-4 flex items-center justify-between text-xs text-zinc-400">
-              <span>Power study profile</span>
-              <span>ETAP</span>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {[
+            ['3.95/4.0', 'GPA'],
+            ['Term 6', 'Electrical Engineering'],
+            ['2028', 'Expected graduation'],
+          ].map(([value, label]) => (
+            <div key={label} className="rounded-lg border border-white/10 bg-black/25 p-4">
+              <p className="text-lg font-semibold text-white">{value}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">{label}</p>
             </div>
-            <div className="flex h-24 items-end gap-2">
-              {[42, 56, 36, 68, 74, 52, 82, 61, 70, 86, 64, 78].map((height, index) => (
-                <span
-                  key={index}
-                  className="flex-1 rounded-t bg-gradient-to-t from-cyan-500/40 to-cyan-200"
-                  style={{ height: `${height}%` }}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-white/10 bg-black/25 p-4">
-            <p className="text-xs text-zinc-400">Design workflow</p>
-            <div className="mt-3 space-y-3 text-sm">
-              {['Model', 'Validate', 'Document'].map((step) => (
-                <div key={step} className="flex items-center gap-2 text-zinc-200">
-                  <Check className="h-4 w-4 text-emerald-300" />
-                  {step}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </motion.div>
@@ -515,8 +389,6 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#050506] text-white">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_-10%,rgba(56,189,248,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.12),transparent_28%),linear-gradient(180deg,#050506_0%,#09090b_45%,#050506_100%)]" />
-      <RobotCrew />
-
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <a href="#home" className="text-sm sm:text-base" aria-label="Naman Arora home">
