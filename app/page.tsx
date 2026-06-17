@@ -256,13 +256,6 @@ const experience: Experience[] = [
   },
 ];
 
-const proofPoints = [
-  ['Refinery systems', 'Electrical reliability, field analysis, EHT, substations, and Co-Gen support.'],
-  ['Power studies', 'ETAP load flow, short-circuit, arc-flash, and protection study experience.'],
-  ['Controls fluency', 'PLC systems, HMI/SCADA, industrial protocols, gateways, and motor relays.'],
-  ['Data automation', 'Dashboards and workflow systems built with Fabric, Power Platform, SQL, and Python.'],
-];
-
 const reasons = [
   {
     title: 'Practical field judgment',
@@ -541,17 +534,6 @@ export default function Home() {
             <EvidencePanel />
           </motion.div>
         </div>
-      </section>
-
-      <section aria-label="Portfolio proof points" className="px-4 pb-12 sm:px-6 md:pb-16">
-        <motion.div {...fadeUp} className="mx-auto grid max-w-6xl gap-3 md:grid-cols-4">
-          {proofPoints.map(([value, label]) => (
-            <div key={value} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-              <p className="text-base font-semibold text-slate-950">{value}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{label}</p>
-            </div>
-          ))}
-        </motion.div>
       </section>
 
       <section id="skills" className="border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 md:py-20">
