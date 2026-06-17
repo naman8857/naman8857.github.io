@@ -361,7 +361,7 @@ function PremiumName({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function EvidencePanel() {
+function EvidencePanel({ className = '' }: { className?: string } = {}) {
   const capabilities = [
     {
       title: 'Power and reliability',
@@ -385,7 +385,7 @@ function EvidencePanel() {
       initial={false}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
-      className="relative mx-auto w-full max-w-[520px]"
+      className={`relative mx-auto w-full max-w-[520px] ${className}`}
     >
       <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(13,148,136,0.12),rgba(245,158,11,0.12),rgba(2,132,199,0.08))]" />
       <div className="relative rounded-lg border border-slate-200 bg-white p-4 shadow-xl shadow-slate-200/70 sm:p-5">
@@ -518,7 +518,28 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <EvidencePanel />
+          <div className="hidden lg:flex flex-col items-center gap-8">
+            <motion.div
+              initial={false}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
+              className="w-full max-w-sm"
+            >
+              <div className="relative rounded-2xl overflow-hidden border-2 border-teal-200 shadow-2xl shadow-teal-100/50 bg-gradient-to-br from-amber-50 to-amber-100">
+                <Image
+                  src="/images/headshot.jpg"
+                  alt="Naman Arora professional headshot"
+                  width={400}
+                  height={500}
+                  priority
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </motion.div>
+            <EvidencePanel />
+          </div>
+
+          <EvidencePanel className="hidden max-lg:block" />
         </div>
       </section>
 
