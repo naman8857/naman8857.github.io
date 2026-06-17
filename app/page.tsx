@@ -421,7 +421,7 @@ function EvidencePanel() {
 
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           {[
-            ['3.95/4.0', 'GPA'],
+            ['3.96/4.0', 'GPA'],
             ['Term 6', 'Electrical Engineering'],
             ['2028', 'Expected graduation'],
           ].map(([value, label]) => (
@@ -529,10 +529,12 @@ export default function Home() {
                 <Image
                   src="/images/headshot.jpg"
                   alt="Naman Arora professional headshot"
-                  width={400}
-                  height={500}
+                  width={600}
+                  height={800}
                   priority
+                  quality={80}
                   className="w-full h-auto object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                 />
               </div>
             </motion.div>

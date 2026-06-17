@@ -32,12 +32,13 @@ export default function ResumePage() {
             <p className="mt-2 text-slate-600">Electrical Engineering • Power Systems • Reliability • Automation</p>
           </div>
 
-          <div className="relative rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <div className="relative w-full rounded-lg border border-slate-200 bg-white p-0 shadow-sm sm:p-2">
             <iframe
-              src="/Naman-Arora-Resume.pdf#toolbar=0"
-              className="h-[80vh] w-full rounded-lg"
-              style={{ minHeight: '600px' }}
+              src="/Naman-Arora-Resume.pdf#zoom=page-fit&toolbar=0"
+              className="h-[90vh] w-full rounded-lg"
+              style={{ minHeight: '600px', border: 'none' }}
               title="Resume PDF"
+              loading="lazy"
             />
           </div>
 
