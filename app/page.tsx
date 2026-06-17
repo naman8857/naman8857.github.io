@@ -346,7 +346,7 @@ function PremiumName({ compact = false }: { compact?: boolean }) {
             Electrical Engineering Student
           </span>
         ) : (
-          <span className="block truncate text-xs font-medium text-slate-500">Electrical Engineering</span>
+          <span className="block truncate text-xs font-medium text-slate-500">Electrical Engineering Student</span>
         )}
       </span>
     </span>
