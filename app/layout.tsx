@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Naman Arora - Electrical Engineering Portfolio",
-  description: "Electrical Engineering student at Memorial University of Newfoundland building practical systems across hardware, data, and automation.",
+  description: "Electrical Engineering student focused on refinery reliability, power systems, instrumentation, controls, and data automation.",
 };
 
 export const viewport: Viewport = {
