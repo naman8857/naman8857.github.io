@@ -442,7 +442,9 @@ export default function Home() {
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
           <a href="#home" className="min-w-0 text-sm sm:text-base" aria-label="Naman Arora home">
-            <PremiumName compact />
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-teal-200 bg-teal-50 text-xs font-bold text-teal-800">
+              NA
+            </span>
           </a>
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
