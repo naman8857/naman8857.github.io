@@ -129,7 +129,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Power and Electrical Design',
     icon: Zap,
-    tone: 'text-amber-900 bg-amber-50 border-amber-100',
+    tone: 'text-sky-700 bg-sky-50 border-sky-100',
     items: [
       'ETAP',
       'AutoCAD',
@@ -148,7 +148,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Instrumentation and Controls',
     icon: Gauge,
-    tone: 'text-amber-900 bg-amber-50 border-amber-100',
+    tone: 'text-teal-700 bg-teal-50 border-teal-100',
     items: [
       'PLC Systems',
       'Siemens TIA Portal',
@@ -167,7 +167,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Data, Automation, and Reporting',
     icon: Database,
-    tone: 'text-amber-900 bg-amber-50 border-amber-100',
+    tone: 'text-amber-800 bg-amber-50 border-amber-100',
     items: [
       'Python',
       'SQL',
@@ -186,7 +186,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Circuit and Prototype Tools',
     icon: CircuitBoard,
-    tone: 'text-amber-900 bg-amber-50 border-amber-100',
+    tone: 'text-indigo-700 bg-indigo-50 border-indigo-100',
     items: [
       'KiCAD',
       'PSpice',
@@ -322,7 +322,7 @@ function SectionHeading({
 }) {
   return (
     <motion.div {...fadeUp} className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-900">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -344,7 +344,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 function PremiumName({ compact = false }: { compact?: boolean }) {
   return (
     <span className="inline-flex min-w-0 items-center gap-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-amber-200 bg-amber-50 text-xs font-bold text-amber-900">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-teal-200 bg-teal-50 text-xs font-bold text-teal-800">
         NA
       </span>
       <span className={compact ? 'min-w-0 leading-tight' : 'leading-tight'}>
@@ -361,7 +361,7 @@ function PremiumName({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function EvidencePanel({ className = '' }: { className?: string } = {}) {
+function EvidencePanel() {
   const capabilities = [
     {
       title: 'Power and reliability',
@@ -385,7 +385,7 @@ function EvidencePanel({ className = '' }: { className?: string } = {}) {
       initial={false}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
-      className={`relative mx-auto w-full max-w-[520px] ${className}`}
+      className="relative mx-auto w-full max-w-[520px]"
     >
       <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(13,148,136,0.12),rgba(245,158,11,0.12),rgba(2,132,199,0.08))]" />
       <div className="relative rounded-lg border border-slate-200 bg-white p-4 shadow-xl shadow-slate-200/70 sm:p-5">
@@ -467,65 +467,65 @@ export default function Home() {
       </nav>
 
       <section id="home" className="px-5 pt-24 sm:px-6 md:pt-32">
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 pb-12 md:gap-14 md:pb-20 lg:grid-cols-[1.02fr_0.98fr]">
-          <motion.div
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full min-w-0 max-w-3xl"
-          >
-            <div className="mb-5 flex flex-wrap gap-2">
-              {['Electrical Reliability', 'Power Systems', 'Controls', 'Data Automation'].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+        <div className="mx-auto w-full max-w-7xl pb-12 md:pb-20">
+          <div className="grid w-full items-center gap-8 md:gap-12 lg:grid-cols-2">
+            <motion.div
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="w-full min-w-0"
+            >
+              <div className="mb-5 flex flex-wrap gap-2">
+                {['Electrical Reliability', 'Power Systems', 'Controls', 'Data Automation'].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="mb-5">
+                <PremiumName />
+              </div>
+              <h1 className="max-w-3xl text-[2rem] font-semibold leading-[1.2] tracking-tight text-slate-950 sm:text-3xl md:text-4xl lg:text-5xl">
+                Electrical engineering for power, reliability, and automation.
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+                I am an Electrical Engineering student at Memorial University of Newfoundland with refinery experience in electrical reliability, EHT systems, ETAP studies, instrumentation, controls, and operational data systems.
+              </p>
+              <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a
+                  href="#experience"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
-                  {item}
-                </span>
-              ))}
-            </div>
-            <div className="mb-5">
-              <PremiumName />
-            </div>
-            <h1 className="max-w-4xl text-[2.1rem] font-semibold leading-[1.1] tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
-              Electrical engineering for power, reliability, and automation.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
-              I am an Electrical Engineering student at Memorial University of Newfoundland with refinery experience in electrical reliability, EHT systems, ETAP studies, instrumentation, controls, and operational data systems.
-            </p>
-            <div className="mt-8 flex w-full max-w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-              <a
-                href="#experience"
-                className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full bg-amber-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-950 sm:w-auto"
-              >
-                View Experience
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50 sm:w-auto"
-              >
-                Project Evidence
-                <Layers3 className="h-4 w-4" />
-              </a>
-              <a
-                href="/resume"
-                className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50 sm:w-auto"
-              >
-                <FileText className="h-4 w-4" />
-                View Resume
-              </a>
-            </div>
-          </motion.div>
+                  View Experience
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#projects"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+                >
+                  Project Evidence
+                  <Layers3 className="h-4 w-4" />
+                </a>
+                <a
+                  href="/resume"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+                >
+                  <FileText className="h-4 w-4" />
+                  View Resume
+                </a>
+              </div>
+            </motion.div>
 
-          <div className="hidden lg:flex flex-col items-center gap-8">
             <motion.div
               initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
-              className="w-full max-w-sm"
+              className="flex justify-center"
             >
-              <div className="relative rounded-2xl overflow-hidden border-4 border-amber-900/20 shadow-2xl shadow-black/10">
+              <div className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50">
                 <Image
                   src="/images/headshot.jpg"
                   alt="Naman Arora professional headshot"
@@ -536,10 +536,11 @@ export default function Home() {
                 />
               </div>
             </motion.div>
-            <EvidencePanel />
           </div>
 
-          <EvidencePanel className="hidden max-lg:block" />
+          <motion.div {...fadeUp} className="mt-12 md:mt-16">
+            <EvidencePanel />
+          </motion.div>
         </div>
       </section>
 
