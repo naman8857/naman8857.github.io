@@ -442,9 +442,7 @@ export default function Home() {
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
           <a href="#home" className="min-w-0 text-sm sm:text-base" aria-label="Naman Arora home">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-teal-200 bg-teal-50 text-xs font-bold text-teal-800">
-              NA
-            </span>
+            <PremiumName compact />
           </a>
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
@@ -486,9 +484,6 @@ export default function Home() {
                     {item}
                   </span>
                 ))}
-              </div>
-              <div className="mb-5">
-                <PremiumName />
               </div>
               <h1 className="max-w-3xl text-[2rem] font-semibold leading-[1.2] tracking-tight text-slate-950 sm:text-3xl md:text-4xl lg:text-5xl">
                 Electrical engineering for power, reliability, and automation.
