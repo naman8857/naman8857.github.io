@@ -129,7 +129,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Power and Electrical Design',
     icon: Zap,
-    tone: 'text-sky-700 bg-sky-50 border-sky-100',
+    tone: 'text-amber-900 bg-amber-50 border-amber-100',
     items: [
       'ETAP',
       'AutoCAD',
@@ -148,7 +148,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Instrumentation and Controls',
     icon: Gauge,
-    tone: 'text-teal-700 bg-teal-50 border-teal-100',
+    tone: 'text-amber-900 bg-amber-50 border-amber-100',
     items: [
       'PLC Systems',
       'Siemens TIA Portal',
@@ -167,7 +167,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Data, Automation, and Reporting',
     icon: Database,
-    tone: 'text-amber-800 bg-amber-50 border-amber-100',
+    tone: 'text-amber-900 bg-amber-50 border-amber-100',
     items: [
       'Python',
       'SQL',
@@ -186,7 +186,7 @@ const skills: SkillGroup[] = [
   {
     title: 'Circuit and Prototype Tools',
     icon: CircuitBoard,
-    tone: 'text-indigo-700 bg-indigo-50 border-indigo-100',
+    tone: 'text-amber-900 bg-amber-50 border-amber-100',
     items: [
       'KiCAD',
       'PSpice',
@@ -322,7 +322,7 @@ function SectionHeading({
 }) {
   return (
     <motion.div {...fadeUp} className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-900">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -344,7 +344,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 function PremiumName({ compact = false }: { compact?: boolean }) {
   return (
     <span className="inline-flex min-w-0 items-center gap-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-teal-200 bg-teal-50 text-xs font-bold text-teal-800">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-amber-200 bg-amber-50 text-xs font-bold text-amber-900">
         NA
       </span>
       <span className={compact ? 'min-w-0 leading-tight' : 'leading-tight'}>
@@ -496,7 +496,7 @@ export default function Home() {
             <div className="mt-8 flex w-full max-w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
               <a
                 href="#experience"
-                className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-800 sm:w-auto"
+                className="inline-flex w-full max-w-full items-center justify-center gap-2 rounded-full bg-amber-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-950 sm:w-auto"
               >
                 View Experience
                 <ArrowRight className="h-4 w-4" />
@@ -525,7 +525,7 @@ export default function Home() {
               transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
               className="w-full max-w-sm"
             >
-              <div className="relative rounded-2xl overflow-hidden border-2 border-teal-200 shadow-2xl shadow-teal-100/50 bg-gradient-to-br from-amber-50 to-amber-100">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-amber-900/20 shadow-2xl shadow-black/10">
                 <Image
                   src="/images/headshot.jpg"
                   alt="Naman Arora professional headshot"
