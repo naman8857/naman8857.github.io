@@ -1,0 +1,1487 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "7437d490-fbc5-41fd-b0fd-9f25d840521b")
+	(paper "A4")
+	(title_block
+		(title "Wi-Fi SmartFuse PCB")
+		(rev "A")
+		(company "Naman Arora / Personal Engineering Portfolio")
+	)
+	(lib_symbols)
+	(junction
+		(at 228.6 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b802799-ee9f-407d-96ea-6aa71419ec76")
+	)
+	(junction
+		(at 101.6 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5caa9194-31ce-46f3-8e45-5bce99c3870e")
+	)
+	(junction
+		(at 101.6 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5e477cf6-fdfd-49ae-9e94-59fd551d384c")
+	)
+	(junction
+		(at 167.64 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5fb9873b-cc72-4621-b7cd-47414d6cd85e")
+	)
+	(junction
+		(at 99.06 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "671f4812-97c5-4b08-a9f6-e22d55f0db5a")
+	)
+	(junction
+		(at 99.06 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72231c1c-eb64-48ee-9673-4153a2b6c9a7")
+	)
+	(junction
+		(at 99.06 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "836a1b83-8060-4c56-97b3-6433ce30fecf")
+	)
+	(junction
+		(at 228.6 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b2a2bc8-439b-4d32-b5df-393869cdce73")
+	)
+	(wire
+		(pts
+			(xy 200.66 91.44) (xy 200.66 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0113b9a0-e857-494e-879e-7b4d3c4a081c")
+	)
+	(wire
+		(pts
+			(xy 194.31 91.44) (xy 194.31 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0510b881-2bf9-43b6-9223-9f9b7d3dafe1")
+	)
+	(wire
+		(pts
+			(xy 181.61 88.9) (xy 181.61 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b495cf4-c10f-40b5-a944-200368ff7f60")
+	)
+	(wire
+		(pts
+			(xy 196.85 147.32) (xy 196.85 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dc8efe7-5d4e-48e0-82e2-b31392de3876")
+	)
+	(wire
+		(pts
+			(xy 96.52 125.73) (xy 99.06 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "103c2b89-0cdd-4c25-81a8-5627fb3fe998")
+	)
+	(wire
+		(pts
+			(xy 167.64 57.15) (xy 167.64 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10d6fb6d-a3a2-4bb8-8c9f-827b8e436e71")
+	)
+	(wire
+		(pts
+			(xy 167.64 52.07) (xy 170.18 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14d24c4d-ec54-4767-8416-7a12dc792700")
+	)
+	(wire
+		(pts
+			(xy 96.52 137.16) (xy 100.33 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19956e9f-d7c9-4740-9970-78edec241b31")
+	)
+	(wire
+		(pts
+			(xy 96.52 147.32) (xy 99.06 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2224bfc9-bd53-4479-a744-072cc7629828")
+	)
+	(wire
+		(pts
+			(xy 163.83 124.46) (xy 168.91 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2285051d-33b0-4820-a076-ec7f580ae3f7")
+	)
+	(wire
+		(pts
+			(xy 179.07 114.3) (xy 228.6 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23461ad5-91fc-4436-b32a-4b07c6965784")
+	)
+	(wire
+		(pts
+			(xy 101.6 76.2) (xy 102.87 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23e36a94-5ad0-4eef-a94e-044970b3f1e2")
+	)
+	(wire
+		(pts
+			(xy 115.57 127) (xy 115.57 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27e957fd-7e3c-4baf-ae3a-3a148b455be2")
+	)
+	(wire
+		(pts
+			(xy 163.83 130.81) (xy 179.07 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bc7c2a4-18a0-4293-b2ab-cfdcc7b0e0a5")
+	)
+	(wire
+		(pts
+			(xy 182.88 57.15) (xy 167.64 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e4b3262-3262-467f-817a-f23c787fec52")
+	)
+	(wire
+		(pts
+			(xy 99.06 149.86) (xy 168.91 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "384c1600-0110-4ea1-aac5-00804584c456")
+	)
+	(wire
+		(pts
+			(xy 165.1 66.04) (xy 171.45 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38939b03-702b-45ca-baa2-54ef719f511b")
+	)
+	(wire
+		(pts
+			(xy 165.1 59.69) (xy 181.61 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a9dcac0-eaee-4a9a-ae53-41bd35357e3e")
+	)
+	(wire
+		(pts
+			(xy 228.6 135.89) (xy 233.68 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cfddd82-13ac-44da-b344-b9a75a9294bc")
+	)
+	(wire
+		(pts
+			(xy 228.6 71.12) (xy 231.14 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d346e25-c822-494a-8a12-05c657ec8b03")
+	)
+	(wire
+		(pts
+			(xy 165.1 52.07) (xy 167.64 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42f3f914-5bf3-417a-b1dc-35aa408992f5")
+	)
+	(wire
+		(pts
+			(xy 96.52 132.08) (xy 99.06 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45490253-74a2-439d-8fb8-0c7e5890cb0e")
+	)
+	(wire
+		(pts
+			(xy 228.6 120.65) (xy 233.68 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "456dfd6e-f89c-4e90-8975-8d7338955dc4")
+	)
+	(wire
+		(pts
+			(xy 99.06 147.32) (xy 101.6 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46f45b44-223e-486f-8ebc-101e2721c7fb")
+	)
+	(wire
+		(pts
+			(xy 100.33 76.2) (xy 101.6 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a4f6dd6-bc03-4a59-b849-955511531707")
+	)
+	(wire
+		(pts
+			(xy 226.06 71.12) (xy 228.6 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dfbd80f-e22f-4851-a66a-0283213fe804")
+	)
+	(wire
+		(pts
+			(xy 189.23 147.32) (xy 189.23 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58b76a6f-114b-4bc6-9c89-e67a1195947f")
+	)
+	(wire
+		(pts
+			(xy 99.06 132.08) (xy 100.33 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a6eaf86-6cdb-439d-9e2e-2c7f9a948dd1")
+	)
+	(wire
+		(pts
+			(xy 167.64 41.91) (xy 228.6 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cdb4f52-055f-491b-af1c-eb92d8ff03de")
+	)
+	(wire
+		(pts
+			(xy 99.06 147.32) (xy 99.06 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fe141da-15cb-4546-920d-dff3d57495bc")
+	)
+	(wire
+		(pts
+			(xy 99.06 132.08) (xy 99.06 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68270fbc-7969-40bb-8427-8f5406538283")
+	)
+	(wire
+		(pts
+			(xy 226.06 67.31) (xy 228.6 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "684b3011-1a58-4303-9d5d-798a3f548ec8")
+	)
+	(wire
+		(pts
+			(xy 96.52 142.24) (xy 100.33 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b9150bc-f058-4bb0-b801-75539fe203a1")
+	)
+	(wire
+		(pts
+			(xy 179.07 130.81) (xy 179.07 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78b2f28b-5019-4e23-83af-4f79f6744d28")
+	)
+	(wire
+		(pts
+			(xy 101.6 88.9) (xy 181.61 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79f69cc6-564f-47e1-b9d5-ce89086f87d8")
+	)
+	(wire
+		(pts
+			(xy 101.6 111.76) (xy 101.6 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ea76689-7d5e-4834-a1cb-70938222f9de")
+	)
+	(wire
+		(pts
+			(xy 99.06 125.73) (xy 99.06 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "876442d2-a912-4d23-b49c-30dfbe044d6d")
+	)
+	(wire
+		(pts
+			(xy 208.28 91.44) (xy 208.28 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89b72726-5ba0-4ef0-90f4-079d57dbdc76")
+	)
+	(wire
+		(pts
+			(xy 99.06 125.73) (xy 100.33 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8aa0a1e5-a5a1-4c8b-8df1-41ce1ede6953")
+	)
+	(wire
+		(pts
+			(xy 226.06 59.69) (xy 228.6 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b50686e-9101-4853-9cc5-f62efe2c81a2")
+	)
+	(wire
+		(pts
+			(xy 99.06 127) (xy 115.57 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "941f87b4-8a34-4edc-95b5-e2432bcb578b")
+	)
+	(wire
+		(pts
+			(xy 101.6 88.9) (xy 101.6 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab7e1c79-0ce4-41cb-93dc-ae885d94cd26")
+	)
+	(wire
+		(pts
+			(xy 208.28 147.32) (xy 208.28 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5d7491b-eba7-4eb2-8a2c-7a40fa9b0bea")
+	)
+	(wire
+		(pts
+			(xy 99.06 111.76) (xy 101.6 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bab80b60-15c5-48bc-b1c2-4cfb78598865")
+	)
+	(wire
+		(pts
+			(xy 115.57 90.17) (xy 182.88 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcf55541-668b-4e2a-bbf5-4b77038b40c4")
+	)
+	(wire
+		(pts
+			(xy 228.6 143.51) (xy 233.68 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4bad68a-465d-436f-a7e8-ba2f08fde4fa")
+	)
+	(wire
+		(pts
+			(xy 182.88 90.17) (xy 182.88 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c870ddc9-c72d-403b-addf-cb2303169f80")
+	)
+	(wire
+		(pts
+			(xy 228.6 114.3) (xy 228.6 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5aa8576-5b63-454b-9868-a1373eec4856")
+	)
+	(wire
+		(pts
+			(xy 228.6 139.7) (xy 233.68 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d941d1b0-6066-4ac7-a24b-e8f13db0bec7")
+	)
+	(wire
+		(pts
+			(xy 228.6 41.91) (xy 228.6 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da43526e-d978-4139-8d1d-cb6e3e8db2f8")
+	)
+	(wire
+		(pts
+			(xy 228.6 130.81) (xy 233.68 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ded74f1f-1844-4d74-8a55-6f86ba452d56")
+	)
+	(wire
+		(pts
+			(xy 203.2 147.32) (xy 203.2 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1cec228-f9fd-491d-b74d-566a17e6f87a")
+	)
+	(wire
+		(pts
+			(xy 213.36 147.32) (xy 213.36 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2581d7a-103c-4dab-bf47-04ce3500e044")
+	)
+	(wire
+		(pts
+			(xy 226.06 63.5) (xy 228.6 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f38f712c-1c93-4077-a9e2-d1897334edea")
+	)
+	(wire
+		(pts
+			(xy 167.64 52.07) (xy 167.64 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6b04550-d296-45f5-b5f8-bd3ad97d585a")
+	)
+	(wire
+		(pts
+			(xy 168.91 149.86) (xy 168.91 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6d5b437-76a9-48db-be02-bd5a15b0c357")
+	)
+	(wire
+		(pts
+			(xy 168.91 138.43) (xy 163.83 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7231e37-3ba9-42c5-a7c4-ad94e24f9f28")
+	)
+	(wire
+		(pts
+			(xy 228.6 125.73) (xy 233.68 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7ec646e-066c-4df6-900f-d20344298f3e")
+	)
+	(wire
+		(pts
+			(xy 228.6 59.69) (xy 231.14 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd731fc6-58ea-4952-9bae-41794caf23db")
+	)
+	(label "I2C_SCL"
+		(at 233.68 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "126aa971-b6d3-479a-a1e5-6b24399d372a")
+	)
+	(label "+3V3"
+		(at 170.18 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1aa9d5c0-350d-4f44-883a-2582b673878f")
+	)
+	(label "I2C_SCL"
+		(at 100.33 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "202e5229-7f7b-47b2-a9c6-375bac0d204f")
+	)
+	(label "+5V"
+		(at 203.2 151.13 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2121a4bf-08e1-4a5d-89ab-159b9f8b5f8e")
+	)
+	(label "LOAD_LED_CTRL"
+		(at 196.85 149.86 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "21f14529-4ee0-469a-b62c-17cff2caae18")
+	)
+	(label "MOSFET_GATE"
+		(at 231.14 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "24149e15-bf3a-4370-bcaf-6172912d498d")
+	)
+	(label "WIFI_LED_CTRL"
+		(at 233.68 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "252af6e7-8f90-4318-9e90-9a59216d9464")
+	)
+	(label "LOAD_NEG"
+		(at 168.91 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "28cef1a7-9aa7-46ad-a178-2daaa71414d7")
+	)
+	(label "VIN_PROTECTED"
+		(at 180.34 59.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "446d6fa9-4471-4462-922b-2f3f3985f6df")
+	)
+	(label "I2C_SDA"
+		(at 233.68 139.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c5d2e98-f059-4f00-8fb3-092c48a6d506")
+	)
+	(label "+3V3"
+		(at 231.14 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "552e40ed-c002-488a-ac07-24cd7fe25e5f")
+	)
+	(label "LOAD_LED_CTRL"
+		(at 200.66 96.52 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6233d7eb-7d31-449a-bd85-23e34a33376a")
+	)
+	(label "I2C_SDA"
+		(at 100.33 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "637c050e-d4ac-45d6-9ef0-e51567774d4a")
+	)
+	(label "MOSFET_GATE"
+		(at 213.36 152.4 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6a6a2580-34ed-4136-8dda-87971a9c1b6d")
+	)
+	(label "+3V3"
+		(at 208.28 151.13 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7a1a4de2-0069-4987-8c46-7176b0a62ba6")
+	)
+	(label "I2C_SDA"
+		(at 228.6 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c7103ec-fba3-4153-9cf4-b9d7acc03af8")
+	)
+	(label "+5V"
+		(at 171.45 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "88ed1186-8cd6-4d59-9335-99365e7f2166")
+	)
+	(label "VIN_PROTECTED"
+		(at 100.33 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9a667ddb-0641-48bf-bbf4-ef4295aaecd4")
+	)
+	(label "LOAD_NEG"
+		(at 233.68 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9eb13dce-5638-4107-8baa-fdc8eee8034f")
+	)
+	(label "LOAD_POS"
+		(at 101.6 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a2bd3617-3ce7-422c-a2af-c9e54ba19ae3")
+	)
+	(label "VIN_PROTECTED"
+		(at 233.68 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a4e2602f-280c-4238-bd0a-c9f548d076c8")
+	)
+	(label "VIN_PROTECTED"
+		(at 102.87 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ba43ed71-8fe5-4c50-b79b-ab1c07af0f80")
+	)
+	(label "+3V3"
+		(at 100.33 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c35e0f90-4868-470f-a0d1-be127bcbebde")
+	)
+	(label "FAULT_LED_CTRL"
+		(at 208.28 96.52 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c5127f05-3576-4c76-900b-9c1b9d40db77")
+	)
+	(label "WIFI_LED_CTRL"
+		(at 194.31 96.52 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c67518f2-0953-42df-8072-b841676afd8d")
+	)
+	(label "FAULT_LED_CTRL"
+		(at 189.23 149.86 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ce0f380e-971e-4761-8a3d-b86dfbe21ddd")
+	)
+	(label "LOAD_POS"
+		(at 233.68 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "daf1f7fb-9bb2-4995-9c00-f2030b4d6f9d")
+	)
+	(label "I2C_SCL"
+		(at 228.6 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df176217-adb4-4d0d-a012-c6479234c323")
+	)
+	(sheet
+		(at 181.61 118.11)
+		(size 46.99 29.21)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "25dd6164-40ab-40ea-b0d9-e8ca06be6272")
+		(property "Sheetname" "06_LEDs_Buttons_Testpoints"
+			(at 181.61 117.3984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "06_LEDs_Buttons_Testpoints.kicad_sch"
+			(at 211.328 116.078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "WIFI_LED_CTRL" input
+			(at 228.6 120.65 0)
+			(uuid "812653a5-602c-485a-968c-708701d815ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VIN_PROTECTED" input
+			(at 228.6 125.73 0)
+			(uuid "c5352832-18d5-441c-a84a-762b0700d9e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOAD_NEG" input
+			(at 228.6 130.81 0)
+			(uuid "f01774ae-6acc-40de-abbf-e3d1082f7579")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SCL" bidirectional
+			(at 228.6 135.89 0)
+			(uuid "0688fb62-d260-46eb-8035-92e5af18f82b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SDA" bidirectional
+			(at 228.6 139.7 0)
+			(uuid "4fecff79-d9d7-4413-ad43-2bf0798c589f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOAD_POS" input
+			(at 228.6 143.51 0)
+			(uuid "aa591c53-0385-4d3c-8a4f-faf23d91c6ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOSFET_GATE" input
+			(at 213.36 147.32 270)
+			(uuid "578a00c0-bd80-4014-b2d5-d54b873c7dc9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3" input
+			(at 208.28 147.32 270)
+			(uuid "8947d239-a896-4fc5-8a93-157813488656")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+5V" input
+			(at 203.2 147.32 270)
+			(uuid "9553d01a-f337-4392-ab58-990ff58087c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LOAD_LED_CTRL" input
+			(at 196.85 147.32 270)
+			(uuid "a1dc6eed-ab41-45d9-9fd3-b631287e223e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FAULT_LED_CTRL" input
+			(at 189.23 147.32 270)
+			(uuid "cd7ccbb0-709f-4340-bcf5-6a6ac7bd5abe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 46.99 121.92)
+		(size 49.53 34.29)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3a5037d0-2a67-4911-a105-fa4bc3feaa6b")
+		(property "Sheetname" "04_INA226_Measurement"
+			(at 46.99 121.2084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_INA226_Measurement.kicad_sch"
+			(at 46.99 156.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+3V3" input
+			(at 96.52 132.08 0)
+			(uuid "29134571-2fb5-4352-b034-b357204b18d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SCL" bidirectional
+			(at 96.52 137.16 0)
+			(uuid "c6dd900d-968d-4635-a10c-c76670bda84f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SDA" bidirectional
+			(at 96.52 142.24 0)
+			(uuid "b0ac5f3e-ff73-4bb5-96f8-fb558cf9e86e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VIN_PROTECTED" input
+			(at 96.52 125.73 0)
+			(uuid "88823a6a-dd67-46a3-b24a-e9b1f91c0983")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOAD_POS" output
+			(at 96.52 147.32 0)
+			(uuid "949371e6-a1ce-4e97-ad4e-260314cb347f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 41.91 45.72)
+		(size 58.42 59.69)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3dfb3880-25d4-4fb7-b8e5-dc03c02c3e1e")
+		(property "Sheetname" "01_Input_Protection"
+			(at 41.91 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "01_Input_Protection.kicad_sch"
+			(at 41.91 105.9946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VIN_PROTECTED" input
+			(at 100.33 76.2 0)
+			(uuid "d589b943-d4d8-4f80-a28b-9d0cc24381a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 185.42 52.07)
+		(size 40.64 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "82fcbf86-2f90-4283-b242-87a258526384")
+		(property "Sheetname" "03_ESP32_Controller"
+			(at 185.42 51.3584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "03_ESP32_Controller.kicad_sch"
+			(at 191.008 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+3V3" input
+			(at 226.06 59.69 0)
+			(uuid "51ecde49-7fc9-4a2e-abce-12f323ba7d6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SCL" bidirectional
+			(at 226.06 63.5 0)
+			(uuid "5784e2e8-1c8a-4375-bc05-f4667669ee0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_SDA" bidirectional
+			(at 226.06 67.31 0)
+			(uuid "39110ea5-293d-422b-a054-495a32c1a94e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOSFET_GATE" output
+			(at 226.06 71.12 0)
+			(uuid "4e2c9ed1-3b3a-4d61-bf97-1be635a67db1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WIFI_LED_CTRL" output
+			(at 194.31 91.44 270)
+			(uuid "3dc8f450-6b4a-45a2-8ec1-b459659d3d9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LOAD_LED_CTRL" output
+			(at 200.66 91.44 270)
+			(uuid "d7c35993-7173-4f9d-8d36-ac1469ce4abb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FAULT_LED_CTRL" output
+			(at 208.28 91.44 270)
+			(uuid "db4fa6b3-7436-4081-8983-afcff3cc3bd4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 129.54 119.38)
+		(size 34.29 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "aa6c64d3-97e1-4d3f-a084-58abac94f1a9")
+		(property "Sheetname" "05_MOSFET_Load_Switch"
+			(at 129.54 118.6684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "05_MOSFET_Load_Switch.kicad_sch"
+			(at 129.54 145.3646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LOAD_NEG" output
+			(at 163.83 124.46 0)
+			(uuid "8e3aa420-4b10-469f-8738-59f508dace2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOAD_POS" input
+			(at 163.83 138.43 0)
+			(uuid "9f5cde6e-ecde-4302-90eb-2dfe06f52af7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOSFET_GATE" input
+			(at 163.83 130.81 0)
+			(uuid "89e6ff92-d894-4fde-9a3c-aefdc0387dd7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 119.38 45.72)
+		(size 45.72 36.83)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b7505648-2025-409a-87ea-a818acfe3831")
+		(property "Sheetname" "02_Power_Regulation"
+			(at 119.38 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_Power_Regulation.kicad_sch"
+			(at 119.38 83.1346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+5V" input
+			(at 165.1 66.04 0)
+			(uuid "3d18c823-2d4c-4a59-a577-965551fb0712")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VIN_PROTECTED" input
+			(at 165.1 59.69 0)
+			(uuid "02ed9220-772f-4fbf-b186-96e434ef1809")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+3V3" input
+			(at 165.1 52.07 0)
+			(uuid "8642c390-9f85-437d-bdc2-f47c6d63c7c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "WiFi_SmartFuse_PCB"
+				(path "/7437d490-fbc5-41fd-b0fd-9f25d840521b"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
