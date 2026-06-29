@@ -123,6 +123,80 @@ const projects: Project[] = [
     docUrl: '/documents/child-brochure',
     docLabel: 'View Brochure',
   },
+  {
+    title: 'WiFi SmartFuse PCB',
+    category: 'Power Electronics / Embedded Protection',
+    problem:
+      'Small 12/24V DC loads need protection plus visibility into current, voltage, load state, and early warning fault conditions.',
+    built:
+      'Designed a KiCad PCB concept with fuse protection, reverse-polarity and TVS protection, buck regulation, ESP32-C3 Wi-Fi control, INA226 monitoring, MOSFET load switching, LEDs, buttons, test points, and a FreeCAD enclosure mockup.',
+    tools: [
+      'KiCad',
+      'ESP32-C3',
+      'INA226',
+      'MOSFET switching',
+      'DC protection',
+      'Buck regulation',
+      'FreeCAD',
+    ],
+    impact:
+      'Connects industrial protection thinking with embedded power electronics by turning a basic DC fuse idea into a monitored, switchable, serviceable protection module concept.',
+    icon: ShieldCheck,
+    repoUrl:
+      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Wifi%20Smart%20Fuse%20Project',
+    image: '/images/portfolio/smartfuse-pcb-layout.webp',
+    gallery: [
+      {
+        src: '/images/portfolio/smartfuse-enclosure.webp',
+        alt: 'FreeCAD enclosure mockup for the WiFi SmartFuse PCB with transparent cover',
+        label: 'Enclosure and board mockup',
+      },
+    ],
+    docUrl: '/documents/wifi-smartfuse',
+    docLabel: 'View Project',
+    highlights: [
+      'Structured the design around input protection, regulated logic power, sensing, control, and protected load output stages.',
+      'Added debug test points, status LEDs, and serviceable terminal access to make the board easier to validate and explain.',
+      'Presented as a design and virtual prototype, not as a manufactured or certified protection product.',
+    ],
+    featured: true,
+  },
+  {
+    title: 'Onshape Office Workspace Design',
+    category: 'Engineering CAD / Design Communication',
+    problem:
+      'Engineering layouts need clear views before physical work starts so equipment, access, furniture, lighting, and possible electrical points can be understood early.',
+    built:
+      'Modeled a complete office workspace in Onshape with walls, doors, windows, furniture, rest area, work area, storage, plant wall features, perspective views, layout views, and drawing sheets.',
+    tools: [
+      'Onshape',
+      '3D CAD',
+      '2D drawings',
+      'Section views',
+      'Layout planning',
+      'Technical documentation',
+    ],
+    impact:
+      'Shows spatial planning and design communication skills that transfer to electrical layouts, control rooms, panel spacing, HMI desk planning, cable routing, lighting plans, and as-built documentation.',
+    icon: Building2,
+    repoUrl:
+      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Onshape%20Project',
+    image: '/images/portfolio/onshape-office-perspective.webp',
+    gallery: [
+      {
+        src: '/images/portfolio/onshape-office-layout.webp',
+        alt: 'Top layout view of the Onshape office workspace design',
+        label: 'Top layout view',
+      },
+    ],
+    docUrl: '/documents/onshape-office',
+    docLabel: 'View Project',
+    highlights: [
+      'Created multiple views so the model can be reviewed from both spatial and documentation perspectives.',
+      'Practiced section-view thinking, layout clarity, and drawing-sheet communication from first-year CAD work.',
+      'Frames CAD as an electrical engineering skill for planning equipment locations, access, and documentation.',
+    ],
+  },
 ];
 
 const skills: SkillGroup[] = [
@@ -514,16 +588,15 @@ export default function Home() {
               transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
               className="flex justify-center"
             >
-              <div className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50">
+              <div className="relative w-full max-w-xl overflow-hidden rounded-lg border border-slate-200 shadow-xl shadow-slate-200/50">
                 <Image
-                  src="/images/headshot.jpg"
+                  src="/images/portfolio/headshot-new-horizontal.webp"
                   alt="Naman Arora professional headshot"
-                  width={600}
-                  height={800}
+                  width={1200}
+                  height={626}
                   priority
-                  quality={80}
-                  className="w-full h-auto object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px"
                 />
               </div>
             </motion.div>
@@ -689,7 +762,7 @@ export default function Home() {
                             alt={image.alt}
                             width={900}
                             height={650}
-                            className="aspect-[4/3] w-full object-cover"
+                            className="aspect-[4/3] w-full bg-slate-50 object-contain"
                           />
                           <figcaption className="border-t border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600">
                             {image.label}

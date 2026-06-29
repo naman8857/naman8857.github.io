@@ -52,13 +52,13 @@ export default function ResumePage() {
               <Download className="h-4 w-4" />
               Download Resume
             </a>
-            <a
+            <Link
               href="/"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Portfolio
-            </a>
+            </Link>
           </div>
         </div>
       </div>
