@@ -5,18 +5,22 @@ import type { Project } from '@/data/projects';
 
 export function ProjectTile({ project }: { project: Project }) {
   const Icon = project.icon;
+  const displayTitle = project.cardTitle ?? project.title;
+  const imageClassName = project.imageFit === 'contain'
+    ? 'object-contain p-3 transition duration-500 group-hover:scale-[1.03]'
+    : 'object-cover transition duration-500 group-hover:scale-[1.03]';
   const visibleTools = project.tools.slice(0, 4);
   const extraToolCount = project.tools.length - visibleTools.length;
 
   return (
-    <article className="group flex h-full min-h-[500px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-slate-200/90">
+    <article className="group flex h-full min-h-[520px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-slate-200/90">
       <Link href={`/projects/${project.slug}`} className="block" aria-label={`View ${project.title}`}>
-        <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-slate-100">
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-white">
           <Image
             src={project.image}
             alt={`${project.title} project preview`}
             fill
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+            className={imageClassName}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
           />
         </div>
@@ -28,8 +32,8 @@ export function ProjectTile({ project }: { project: Project }) {
             <p className="mb-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-teal-700">
               {project.category}
             </p>
-            <h3 className="line-clamp-2 text-xl font-semibold tracking-tight text-slate-950">
-              {project.title}
+            <h3 className="line-clamp-3 text-xl font-semibold tracking-tight text-slate-950">
+              {displayTitle}
             </h3>
           </div>
           <div className="shrink-0 rounded-xl border border-slate-200 bg-slate-50 p-2 text-teal-700">

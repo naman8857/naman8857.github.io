@@ -21,6 +21,8 @@ export default async function ProjectDetailPage({
   }
 
   const Icon = project.icon;
+  const heroImageClassName = project.imageFit === 'contain' ? 'object-contain p-4' : 'object-cover';
+  const hasThreeProofImages = project.gallery.length === 3;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-950">
@@ -74,13 +76,13 @@ export default async function ProjectDetailPage({
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/80">
-              <div className="relative aspect-[16/10] bg-slate-100">
+              <div className="relative aspect-[16/10] bg-white">
                 <Image
                   src={project.image}
                   alt={`${project.title} main project image`}
                   fill
                   priority
-                  className="object-cover"
+                  className={heroImageClassName}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
@@ -143,19 +145,21 @@ export default async function ProjectDetailPage({
               ) : null}
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className={hasThreeProofImages ? 'grid gap-4 md:grid-cols-2' : 'grid gap-4 md:grid-cols-3'}>
               {project.gallery.map((item, index) => (
                 <figure
                   key={item.src}
-                  className={index === 0 ? 'md:col-span-3 overflow-hidden rounded-xl border border-slate-200 bg-slate-50' : 'overflow-hidden rounded-xl border border-slate-200 bg-slate-50'}
+                  className={index === 0
+                    ? `${hasThreeProofImages ? 'md:col-span-2' : 'md:col-span-3'} overflow-hidden rounded-xl border border-slate-200 bg-white`
+                    : 'overflow-hidden rounded-xl border border-slate-200 bg-white'}
                 >
-                  <div className={index === 0 ? 'relative aspect-[16/9]' : 'relative aspect-[4/3]'}>
+                  <div className={index === 0 || hasThreeProofImages ? 'relative aspect-[16/9]' : 'relative aspect-[4/3]'}>
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
                       className="object-contain"
-                      sizes={index === 0 ? '(max-width: 1024px) 100vw, 820px' : '(max-width: 1024px) 100vw, 260px'}
+                      sizes={index === 0 ? '(max-width: 1024px) 100vw, 820px' : hasThreeProofImages ? '(max-width: 1024px) 100vw, 420px' : '(max-width: 1024px) 100vw, 260px'}
                     />
                   </div>
                   <figcaption className="border-t border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-600">

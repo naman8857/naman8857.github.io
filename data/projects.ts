@@ -9,6 +9,7 @@ import {
 export type Project = {
   slug: string;
   title: string;
+  cardTitle?: string;
   category: string;
   summary: string;
   problem: string;
@@ -18,6 +19,7 @@ export type Project = {
   icon: LucideIcon;
   repoUrl: string;
   image: string;
+  imageFit?: 'cover' | 'contain';
   gallery: {
     src: string;
     alt: string;
@@ -74,19 +76,21 @@ export const projects: Project[] = [
   {
     slug: 'smart-child-monitoring-system',
     title: 'Smart Child Monitoring & Comfort Control System',
+    cardTitle: 'Smart Child Monitoring System',
     category: 'Controls and IoT Prototype',
     summary:
-      'An ESP32-S3 CAM based embedded controls project that monitors temperature, humidity, light, and sound, then presents the readings through a browser dashboard while switching low-voltage comfort outputs. The prototype demonstrates the full electrical engineering path from sensor input, regulated power, fused protection, MOSFET output control, enclosure wiring, and C++ web-based monitoring.',
+      'An ESP32-S3-CAM embedded controls prototype that monitors room temperature, humidity, light level, and sound, then displays live readings on a local C++ web dashboard while controlling 12V comfort outputs. The project presents a complete sensor-to-action system: low-voltage power conversion, fuse protection, MOSFET load switching, labeled wiring, enclosure integration, and browser-based monitoring.',
     problem:
-      'A child comfort-monitoring system needs more than a single sensor reading. It must collect room conditions, keep the low-voltage electronics powered safely, switch practical loads such as a fan and LED strip, and give the caregiver a clear interface to understand the status. The challenge was to combine sensing, power conversion, output switching, physical packaging, and dashboard visibility into one working prototype.',
+      'A useful comfort-monitoring prototype cannot stop at one sensor value. It needs to read multiple environmental conditions, keep the low-voltage electronics protected and regulated, switch real 12V loads, and present the system status in a way that can be inspected during a demonstration. The engineering challenge was to connect sensing, power, control, protection, packaging, and user interface into one working prototype instead of leaving them as separate parts.',
     built:
-      'Built a low-voltage ESP32-S3 CAM prototype with DHT11 temperature/humidity sensing, BH1750 light measurement, analog sound sensing, LED indicators, buzzer output, a 12V fan output, 12V LED strip output, buck conversion from 12V to 5V, inline fuse protection, capacitor filtering, MOSFET driver circuits, and a browser-accessible dashboard written through the embedded C++/Arduino environment. The final hardware was packaged in a small enclosure with labeled power, fan, LED strip, MOSFET, and adapter connections so the project could be demonstrated as a complete sensor-to-action system.',
+      'Built a low-voltage ESP32-S3-CAM prototype using a DHT11 temperature/humidity sensor, BH1750 light sensor, analog sound sensor, LED indicators, buzzer output, 12V fan output, and 12V LED strip output. The hardware includes a barrel-jack input, inline fuse, 470 uF filtering capacitor, buck conversion from 12V to 5V, MOSFET driver stages for output switching, and labeled enclosure wiring. I also created a local browser dashboard in embedded C++/Arduino logic so the prototype could show live readings, AUTO/MANUAL mode, cry-alert state, fan/light status, and manual output controls.',
     tools: ['ESP32-S3 CAM', 'DHT11', 'BH1750', 'Sound sensor', 'MOSFET drivers', 'Embedded C/C++', 'Web dashboard'],
     impact:
-      'This project shows practical embedded control work: reading multiple sensors, conditioning power, protecting the input, switching 12V outputs, packaging the electronics, and building a simple human-facing dashboard. It connects electrical design with real-world usability because the prototype is not only wired, but also observable, controllable, and explainable from the hardware layer to the web interface.',
+      'This project demonstrates practical embedded controls work in a form that can be inspected: sensor inputs, regulated power rails, input protection, MOSFET-switched loads, physical wiring, enclosure-level connections, and a live dashboard. It shows that the design is not only a software demo or a wiring photo; it is an end-to-end controls prototype where the hardware layer, control logic, and user interface are connected and explainable.',
     icon: CircuitBoard,
     repoUrl: 'https://github.com/naman8857/Child-Monitoring-Project-ECE-5000',
     image: '/images/portfolio/child-final-prototype.webp',
+    imageFit: 'contain',
     gallery: [
       {
         src: '/images/portfolio/child-inside-circuitry.webp',
@@ -96,20 +100,20 @@ export const projects: Project[] = [
       {
         src: '/images/portfolio/child-circuit-schematic.webp',
         alt: 'Circuit schematic for the smart child monitoring system showing 12V input, buck converter, sensors, ESP32-S3 CAM, MOSFET drivers, fan, LED strip, buzzer, and LEDs',
-        label: 'Complete circuit schematic',
+        label: 'Circuit schematic and electrical architecture',
       },
       {
         src: '/images/portfolio/child-web-dashboard.webp',
         alt: 'Browser dashboard for the smart child monitoring system showing temperature, humidity, light, sound, auto/manual mode, fan control, light control, and alert reset',
-        label: 'C++ web dashboard and live controls',
+        label: 'Embedded C++ web dashboard and live controls',
       },
     ],
     docUrl: '/documents/child-brochure',
     docLabel: 'View Brochure',
     highlights: [
-      'Integrated environmental sensing, low-voltage power conversion, fuse protection, MOSFET output switching, and enclosure wiring into one prototype.',
-      'Used embedded C++/Arduino logic to publish a local web dashboard for live readings, mode status, fan/light control, and alert reset.',
-      'Documented the prototype with labeled hardware photos, schematic architecture, and dashboard evidence so the design can be reviewed like an engineering case study.',
+      'Integrated environmental sensing, low-voltage power conversion, inline fuse protection, MOSFET output switching, and enclosure wiring into one prototype.',
+      'Used embedded C++/Arduino logic to publish a local web dashboard for live readings, operating mode, fan/light status, manual controls, and alert reset.',
+      'Documented the build with final prototype photos, internal wiring, schematic evidence, and dashboard proof so the design can be reviewed like an engineering case study.',
     ],
   },
   {
