@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import ImageCarousel from '../../../components/ImageCarousel';
 import { ArrowLeft, GitBranch } from 'lucide-react';
 
 const reportPages = [
@@ -48,22 +48,11 @@ export default function HeartRateReportPage() {
           </a>
         </header>
 
-        <div className="space-y-4">
-          {reportPages.map(([src, alt], index) => (
-            <figure
-              key={src}
-              className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm shadow-slate-200/80"
-            >
-              <Image
-                src={src}
-                alt={alt}
-                width={1600}
-                height={1200}
-                className="h-auto w-full"
-                priority={index === 0}
-              />
-            </figure>
-          ))}
+        <div>
+          <ImageCarousel
+            slides={reportPages.map(([src, alt]) => ({ src, alt }))}
+            interval={3500}
+          />
         </div>
       </div>
     </main>

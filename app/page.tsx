@@ -9,7 +9,6 @@ import {
   Check,
   CircuitBoard,
   Database,
-  ExternalLink,
   FileText,
   GitBranch,
   Gauge,
@@ -19,33 +18,13 @@ import {
   RadioTower,
   Route,
   ShieldCheck,
-  Thermometer,
   Waypoints,
   Workflow,
   Zap,
   type LucideIcon,
 } from 'lucide-react';
-
-type Project = {
-  title: string;
-  category: string;
-  problem: string;
-  built: string;
-  tools: string[];
-  impact: string;
-  icon: LucideIcon;
-  repoUrl: string;
-  image?: string;
-  gallery?: {
-    src: string;
-    alt: string;
-    label: string;
-  }[];
-  docUrl?: string;
-  docLabel?: string;
-  highlights?: string[];
-  featured?: boolean;
-};
+import { ProjectTile } from '@/components/ProjectTile';
+import { projects } from '@/data/projects';
 
 type SkillGroup = {
   title: string;
@@ -65,139 +44,6 @@ type Experience = {
 };
 
 const navItems = ['Skills', 'Experience', 'Projects', 'Contact'];
-
-const projects: Project[] = [
-  {
-    title: 'Optical Heart Rate Monitor',
-    category: 'Analog Instrumentation',
-    problem:
-      'Optical pulse changes are small and noisy, so the signal needs careful sensing, filtering, amplification, and threshold detection.',
-    built:
-      'Built and validated a low-voltage optical heart-rate monitor with an IR sensing front end, cascaded op-amp stages, threshold logic, and LED pulse alerts.',
-    tools: [
-      'IR optical sensing',
-      'Op-amp filtering',
-      'Schmitt trigger',
-      '555 timer',
-      'Oscilloscope validation',
-    ],
-    impact:
-      'Shows instrumentation fundamentals, analog signal conditioning, test discipline, and practical circuit debugging.',
-    icon: Thermometer,
-    repoUrl: 'https://github.com/naman8857/Optical-Heart-Rate-Monitor-Project',
-    image: '/images/heart-rate-oscilloscope.jpg',
-    gallery: [
-      {
-        src: '/images/heart-rate-prototype.jpg',
-        alt: 'Breadboard prototype for the optical heart-rate monitor circuit',
-        label: 'Breadboard prototype',
-      },
-      {
-        src: '/images/heart-rate-schematic.jpg',
-        alt: 'Schematic for the optical heart-rate monitor circuit',
-        label: 'Circuit schematic',
-      },
-    ],
-    docUrl: '/documents/heart-rate-report',
-    docLabel: 'View Report',
-    highlights: [
-      'Translated a weak optical waveform into a usable electrical signal.',
-      'Used filtering, amplification, and threshold logic to produce repeatable pulse indication.',
-      'Verified circuit behavior with oscilloscope testing and documented measured results.',
-    ],
-    featured: true,
-  },
-  {
-    title: 'Smart Child Monitoring & Comfort Control System',
-    category: 'Controls and IoT Prototype',
-    problem:
-      'Caregivers need a simple way to monitor environmental comfort conditions and respond to alerts before they become operational issues.',
-    built:
-      'Developed an ESP32-S3 CAM prototype with temperature, light, and sound sensing, dashboard monitoring, alerting, and comfort control outputs.',
-    tools: ['ESP32-S3 CAM', 'DHT11', 'BH1750', 'Sound sensor', 'Embedded C/C++', 'IoT monitoring'],
-    impact:
-      'Shows sensor integration, automation logic, device testing, and readable technical documentation.',
-    icon: CircuitBoard,
-    repoUrl: 'https://github.com/naman8857/Child-Monitoring-Project-ECE-5000',
-    image: '/images/child-brochure.png',
-    docUrl: '/documents/child-brochure',
-    docLabel: 'View Brochure',
-  },
-  {
-    title: 'WiFi SmartFuse PCB',
-    category: 'Power Electronics / Embedded Protection',
-    problem:
-      'Small 12/24V DC loads need protection plus visibility into current, voltage, load state, and early warning fault conditions.',
-    built:
-      'Designed a KiCad PCB concept with fuse protection, reverse-polarity and TVS protection, buck regulation, ESP32-C3 Wi-Fi control, INA226 monitoring, MOSFET load switching, LEDs, buttons, test points, and a FreeCAD enclosure mockup.',
-    tools: [
-      'KiCad',
-      'ESP32-C3',
-      'INA226',
-      'MOSFET switching',
-      'DC protection',
-      'Buck regulation',
-      'FreeCAD',
-    ],
-    impact:
-      'Connects industrial protection thinking with embedded power electronics by turning a basic DC fuse idea into a monitored, switchable, serviceable protection module concept.',
-    icon: ShieldCheck,
-    repoUrl:
-      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Wifi%20Smart%20Fuse%20Project',
-    image: '/images/portfolio/smartfuse-pcb-layout.webp',
-    gallery: [
-      {
-        src: '/images/portfolio/smartfuse-enclosure.webp',
-        alt: 'FreeCAD enclosure mockup for the WiFi SmartFuse PCB with transparent cover',
-        label: 'Enclosure and board mockup',
-      },
-    ],
-    docUrl: '/documents/wifi-smartfuse',
-    docLabel: 'View Project',
-    highlights: [
-      'Structured the design around input protection, regulated logic power, sensing, control, and protected load output stages.',
-      'Added debug test points, status LEDs, and serviceable terminal access to make the board easier to validate and explain.',
-      'Presented as a design and virtual prototype, not as a manufactured or certified protection product.',
-    ],
-    featured: true,
-  },
-  {
-    title: 'Onshape Office Workspace Design',
-    category: 'Engineering CAD / Design Communication',
-    problem:
-      'Engineering layouts need clear views before physical work starts so equipment, access, furniture, lighting, and possible electrical points can be understood early.',
-    built:
-      'Modeled a complete office workspace in Onshape with walls, doors, windows, furniture, rest area, work area, storage, plant wall features, perspective views, layout views, and drawing sheets.',
-    tools: [
-      'Onshape',
-      '3D CAD',
-      '2D drawings',
-      'Section views',
-      'Layout planning',
-      'Technical documentation',
-    ],
-    impact:
-      'Shows spatial planning and design communication skills that transfer to electrical layouts, control rooms, panel spacing, HMI desk planning, cable routing, lighting plans, and as-built documentation.',
-    icon: Building2,
-    repoUrl:
-      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Onshape%20Project',
-    image: '/images/portfolio/onshape-office-perspective.webp',
-    gallery: [
-      {
-        src: '/images/portfolio/onshape-office-layout.webp',
-        alt: 'Top layout view of the Onshape office workspace design',
-        label: 'Top layout view',
-      },
-    ],
-    docUrl: '/documents/onshape-office',
-    docLabel: 'View Project',
-    highlights: [
-      'Created multiple views so the model can be reviewed from both spatial and documentation perspectives.',
-      'Practiced section-view thinking, layout clarity, and drawing-sheet communication from first-year CAD work.',
-      'Frames CAD as an electrical engineering skill for planning equipment locations, access, and documentation.',
-    ],
-  },
-];
 
 const skills: SkillGroup[] = [
   {
@@ -691,122 +537,16 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Projects"
-            title="Projects as inspection-ready engineering proof."
-            text="These sit after the professional story, with clear problem, build, validation, tools, and browser-viewable reports."
+            title="Project tiles that open into full engineering proof."
+            text="The homepage now works like a clean project gallery: each tile gives a quick recruiter-friendly scan, then the full project page shows background, images, validation, tools, and links."
           />
 
-          <div className="grid gap-4 lg:grid-cols-3">
-            {projects.map((project) => {
-              const Icon = project.icon;
-              return (
-                <motion.article
-                  key={project.title}
-                  {...fadeUp}
-                  className={`rounded-lg border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/80 transition hover:border-slate-300 sm:p-5 ${
-                    project.featured ? 'lg:col-span-2' : ''
-                  }`}
-                >
-                  <div className="mb-5 flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-teal-700">
-                        {project.category}
-                      </p>
-                      <h3 className="text-xl font-semibold tracking-tight text-slate-950 md:text-2xl">
-                        {project.title}
-                      </h3>
-                    </div>
-                    <div className="shrink-0 rounded-lg border border-slate-200 bg-slate-50 p-2 text-teal-700">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4 text-sm leading-6 text-slate-600 md:grid-cols-2">
-                    <div>
-                      <p className="font-semibold text-slate-950">Problem</p>
-                      <p className="mt-1">{project.problem}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-950">Built</p>
-                      <p className="mt-1">{project.built}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-950">Impact</p>
-                      <p className="mt-1">{project.impact}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-950">Tools</p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {project.tools.map((tool) => (
-                          <Pill key={tool}>{tool}</Pill>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  {project.image ? (
-                    <div className="mt-5 overflow-hidden rounded-lg border border-slate-200 bg-white">
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} preview`}
-                        width={1200}
-                        height={800}
-                        className="max-h-[360px] w-full object-contain sm:max-h-[520px]"
-                      />
-                    </div>
-                  ) : null}
-                  {project.gallery ? (
-                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                      {project.gallery.map((image) => (
-                        <figure key={image.src} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width={900}
-                            height={650}
-                            className="aspect-[4/3] w-full bg-slate-50 object-contain"
-                          />
-                          <figcaption className="border-t border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600">
-                            {image.label}
-                          </figcaption>
-                        </figure>
-                      ))}
-                    </div>
-                  ) : null}
-                  {project.highlights ? (
-                    <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4">
-                      <p className="mb-3 text-sm font-semibold text-slate-950">Key engineering details</p>
-                      <div className="space-y-2">
-                        {project.highlights.map((highlight) => (
-                          <div key={highlight} className="flex gap-2 text-sm leading-6 text-slate-600">
-                            <Check className="mt-1 h-4 w-4 shrink-0 text-teal-700" />
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
-                    >
-                      View Repo
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                    {project.docUrl ? (
-                      <a
-                        href={project.docUrl}
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
-                      >
-                        {project.docLabel ?? 'View Document'}
-                        <FileText className="h-4 w-4" />
-                      </a>
-                    ) : null}
-                  </div>
-                </motion.article>
-              );
-            })}
+          <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {projects.map((project) => (
+              <motion.div key={project.slug} {...fadeUp} className="h-full">
+                <ProjectTile project={project} />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, GitBranch } from 'lucide-react';
+import ImageCarousel from '../../../components/ImageCarousel';
 
 export const metadata = {
   title: 'Child Monitoring Brochure - Naman Arora',
@@ -35,14 +35,13 @@ export default function ChildBrochurePage() {
           </a>
         </header>
 
-        <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm shadow-slate-200/80">
-          <Image
-            src="/images/child-brochure.png"
-            alt="Smart child monitoring and comfort control brochure"
-            width={1600}
-            height={1200}
-            className="h-auto w-full"
-            priority
+        <div>
+          <ImageCarousel
+            slides={[
+              { src: '/images/child-brochure.png', alt: 'Smart child monitoring brochure - overview' },
+              { src: '/images/child-report.png', alt: 'Smart child monitoring brochure - detailed view' },
+            ]}
+            interval={4500}
           />
         </div>
       </div>
