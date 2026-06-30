@@ -50,18 +50,23 @@ export const projects: Project[] = [
     gallery: [
       {
         src: '/images/portfolio/smartfuse-pcb-layout.webp',
-        alt: 'KiCad PCB layout for the WiFi SmartFuse PCB',
-        label: 'PCB layout',
+        alt: 'KiCad PCB layout view showing the routed WiFi SmartFuse board and main functional zones',
+        label: 'PCB layout and routing evidence',
       },
       {
-        src: '/images/portfolio/smartfuse-enclosure.webp',
-        alt: 'FreeCAD enclosure mockup for the WiFi SmartFuse PCB with transparent cover',
-        label: 'Enclosure and board mockup',
+        src: '/images/portfolio/smartfuse-proof-enclosure.webp',
+        alt: 'Transparent enclosure mockup showing how the WiFi SmartFuse PCB fits into a serviceable housing',
+        label: 'Enclosure fit and board packaging',
       },
       {
-        src: '/images/portfolio/smartfuse-enclosure-square.webp',
-        alt: 'Square preview of the WiFi SmartFuse enclosure concept',
-        label: 'Enclosure detail',
+        src: '/images/portfolio/smartfuse-proof-board-render.webp',
+        alt: '3D KiCad board render showing component placement, terminals, test points, and power section layout',
+        label: '3D board render and component placement',
+      },
+      {
+        src: '/images/portfolio/smartfuse-proof-schematic-overview.webp',
+        alt: 'Top-level hierarchical KiCad schematic showing input protection, power regulation, ESP32 control, INA226 measurement, MOSFET load switching, and LED/testpoint sheets',
+        label: 'Hierarchical schematic architecture',
       },
     ],
     docUrl: '/documents/wifi-smartfuse',

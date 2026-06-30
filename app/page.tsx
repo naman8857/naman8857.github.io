@@ -537,8 +537,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Projects"
-            title="Project tiles that open into full engineering proof."
-            text="The homepage now works like a clean project gallery: each tile gives a quick recruiter-friendly scan, then the full project page shows background, images, validation, tools, and links."
+            title="Engineering proof, not just project screenshots."
+            text="Each project is presented to demonstrate engineering thinking: define the problem, build the solution, validate the result, and communicate the evidence clearly."
           />
 
           <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-4">

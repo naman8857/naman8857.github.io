@@ -21,6 +21,8 @@ export default async function ProjectDetailPage({
   }
 
   const Icon = project.icon;
+  const proofImageCount = project.gallery.length;
+  const hasThreeSupportingProofImages = proofImageCount >= 4;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-950">
@@ -143,11 +145,17 @@ export default async function ProjectDetailPage({
               ) : null}
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className={hasThreeSupportingProofImages ? 'grid gap-4 sm:grid-cols-2 xl:grid-cols-3' : 'grid gap-4 md:grid-cols-2'}>
               {project.gallery.map((item, index) => (
                 <figure
                   key={item.src}
-                  className={index === 0 ? 'md:col-span-2 overflow-hidden rounded-xl border border-slate-200 bg-slate-50' : 'overflow-hidden rounded-xl border border-slate-200 bg-slate-50'}
+                  className={
+                    index === 0
+                      ? hasThreeSupportingProofImages
+                        ? 'sm:col-span-2 xl:col-span-3 overflow-hidden rounded-xl border border-slate-200 bg-slate-50'
+                        : 'md:col-span-2 overflow-hidden rounded-xl border border-slate-200 bg-slate-50'
+                      : 'overflow-hidden rounded-xl border border-slate-200 bg-slate-50'
+                  }
                 >
                   <div className={index === 0 ? 'relative aspect-[16/9]' : 'relative aspect-[4/3]'}>
                     <Image
@@ -155,7 +163,13 @@ export default async function ProjectDetailPage({
                       alt={item.alt}
                       fill
                       className="object-contain"
-                      sizes={index === 0 ? '(max-width: 1024px) 100vw, 760px' : '(max-width: 1024px) 100vw, 380px'}
+                      sizes={
+                        index === 0
+                          ? '(max-width: 1024px) 100vw, 760px'
+                          : hasThreeSupportingProofImages
+                            ? '(max-width: 1280px) 50vw, 250px'
+                            : '(max-width: 1024px) 100vw, 380px'
+                      }
                     />
                   </div>
                   <figcaption className="border-t border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-600">
