@@ -68,3 +68,16 @@ body {
 }
 
 
+
+/* Desktop readability polish: keeps the site from looking tiny on large monitors. */
+@media (min-width: 1536px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 2100px) {
+  html {
+    font-size: 18px;
+  }
+}
