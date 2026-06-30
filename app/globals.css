@@ -81,3 +81,127 @@ body {
     font-size: 18px;
   }
 }
+
+/* Desktop-only layout upgrade. Mobile/tablet keeps the existing stacked layout. */
+@media (min-width: 1024px) {
+  .portfolio-container {
+    width: min(1180px, calc(100vw - 96px));
+    max-width: none;
+  }
+
+  .hero-section {
+    padding-top: 7.5rem;
+  }
+
+  .portfolio-hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 4rem;
+  }
+
+  .hero-copy h1 {
+    max-width: 760px;
+    font-size: clamp(3.25rem, 4vw, 4.85rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-copy p {
+    max-width: 700px;
+    font-size: 1.08rem;
+    line-height: 1.78;
+  }
+
+  .hero-image-card {
+    max-width: none;
+    border-radius: 1.25rem;
+  }
+
+  .hero-image-card img {
+    min-height: 310px;
+    object-fit: cover;
+  }
+
+  .evidence-panel {
+    max-width: none;
+  }
+
+  .section-heading {
+    max-width: 860px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .portfolio-container {
+    width: min(1280px, calc(100vw - 120px));
+  }
+
+  .hero-container {
+    padding-bottom: 7rem;
+  }
+
+  .portfolio-hero-grid {
+    gap: 5rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4rem, 4.5vw, 5.45rem);
+  }
+
+  .hero-copy p {
+    font-size: 1.18rem;
+  }
+
+  .hero-image-card img {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .portfolio-container {
+    width: min(1420px, calc(100vw - 150px));
+  }
+
+  .hero-section {
+    padding-top: 8.25rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4.4rem, 4.2vw, 5.75rem);
+  }
+
+  .hero-copy p {
+    font-size: 1.25rem;
+  }
+
+  .hero-image-card img {
+    min-height: 390px;
+  }
+
+  .section-heading h2 {
+    font-size: 3.4rem;
+    line-height: 1.04;
+  }
+}
+
+@media (min-width: 1800px) {
+  .portfolio-container {
+    width: min(1540px, calc(100vw - 180px));
+  }
+
+  .portfolio-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(540px, 0.86fr);
+    gap: 6rem;
+  }
+
+  .hero-copy h1 {
+    font-size: 5.9rem;
+  }
+
+  .hero-copy p {
+    font-size: 1.32rem;
+  }
+
+  .hero-image-card img {
+    min-height: 430px;
+  }
+}

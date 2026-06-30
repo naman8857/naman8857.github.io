@@ -233,7 +233,7 @@ function SectionHeading({
   text: string;
 }) {
   return (
-    <motion.div {...fadeUp} className="mx-auto mb-10 max-w-4xl text-center md:mb-14 xl:mb-16">
+    <motion.div {...fadeUp} className="section-heading mx-auto mb-10 max-w-4xl text-center md:mb-14 xl:mb-16">
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
         {eyebrow}
       </p>
@@ -297,7 +297,7 @@ function EvidencePanel() {
       initial={false}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
-      className="relative mx-auto w-full max-w-5xl"
+      className="evidence-panel relative mx-auto w-full max-w-5xl"
     >
       <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(13,148,136,0.12),rgba(245,158,11,0.12),rgba(2,132,199,0.08))]" />
       <div className="relative rounded-lg border border-slate-200 bg-white p-4 shadow-xl shadow-slate-200/70 sm:p-5">
@@ -350,9 +350,9 @@ function EvidencePanel() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950">
+    <main className="portfolio-home min-h-screen overflow-x-hidden bg-white text-slate-950">
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 w-full max-w-[1500px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <div className="portfolio-container mx-auto flex h-16 w-full items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <a href="#home" className="min-w-0 text-sm sm:text-base" aria-label="Naman Arora home">
             <PremiumName compact />
           </a>
@@ -378,14 +378,14 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="home" className="px-5 pt-24 sm:px-6 md:pt-32 xl:pt-36">
-        <div className="mx-auto w-full max-w-[1500px] pb-12 md:pb-20 xl:pb-24">
-          <div className="grid w-full items-center gap-8 md:gap-12 lg:grid-cols-[1.05fr_0.95fr] xl:gap-16">
+      <section id="home" className="hero-section px-5 pt-24 sm:px-6 md:pt-32 xl:pt-36">
+        <div className="portfolio-container hero-container mx-auto w-full pb-12 md:pb-20 xl:pb-24">
+          <div className="portfolio-hero-grid grid w-full items-center gap-8 md:gap-12 lg:grid-cols-[1.05fr_0.95fr] xl:gap-16">
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="w-full min-w-0"
+              className="hero-copy w-full min-w-0"
             >
               <div className="mb-5 flex flex-wrap gap-2">
                 {['Electrical Reliability', 'Power Systems', 'Controls', 'Data Automation'].map((item) => (
@@ -434,7 +434,7 @@ export default function Home() {
               transition={{ duration: 0.65, delay: 0.2, ease: 'easeOut' }}
               className="flex justify-center"
             >
-              <div className="relative w-full max-w-2xl overflow-hidden rounded-lg border border-slate-200 shadow-xl shadow-slate-200/50">
+              <div className="hero-image-card relative w-full max-w-2xl overflow-hidden rounded-lg border border-slate-200 shadow-xl shadow-slate-200/50">
                 <Image
                   src="/images/portfolio/headshot-new-horizontal.webp"
                   alt="Naman Arora professional headshot"
@@ -455,7 +455,7 @@ export default function Home() {
       </section>
 
       <section id="skills" className="border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 md:py-20">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="portfolio-container mx-auto">
           <SectionHeading
             eyebrow="Skills"
             title="Electrical-first skills with controls and data depth."
@@ -485,7 +485,7 @@ export default function Home() {
       </section>
 
       <section id="experience" className="px-4 py-12 sm:px-6 md:py-20">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="portfolio-container mx-auto">
           <SectionHeading
             eyebrow="Experience"
             title="Professional experience built around industrial systems."
@@ -534,7 +534,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 md:py-20">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="portfolio-container mx-auto">
           <SectionHeading
             eyebrow="Projects"
             title="Engineering proof, not just project screenshots."
@@ -552,7 +552,7 @@ export default function Home() {
       </section>
 
       <section className="px-4 py-12 sm:px-6 md:py-20">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="portfolio-container mx-auto">
           <SectionHeading
             eyebrow="Role fit"
             title="Aligned to practical electrical engineering screens."
@@ -578,7 +578,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 md:py-20">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="portfolio-container mx-auto">
           <SectionHeading
             eyebrow="Why hire me"
             title="A practical engineer who connects systems to outcomes."
@@ -635,7 +635,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-200 px-6 py-8">
-        <div className="mx-auto flex max-w-[1500px] flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="portfolio-container mx-auto flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; 2026 Naman Arora. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <PanelsTopLeft className="h-4 w-4" />
