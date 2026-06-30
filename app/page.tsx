@@ -538,7 +538,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Projects"
             title="Engineering proof, not just project screenshots."
-            text="Each project is presented to demonstrate engineering thinking: define the problem, build the solution, validate the result, and communicate the evidence clearly."
+            text="Each project opens as a small engineering case study: the problem, the design decisions, the implementation evidence, and the proof that the work can be inspected."
           />
 
           <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-4">
