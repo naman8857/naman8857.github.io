@@ -31,54 +31,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'wifi-smartfuse-pcb',
-    title: 'WiFi SmartFuse PCB',
-    category: 'Power Electronics / Embedded Protection',
-    summary:
-      'A portfolio-level 12/24V DC smart protection module designed to show how a basic fuse can be extended into a monitored, switchable, and serviceable protection system. The project combines PCB layout, input protection, regulated logic power, current/voltage sensing, ESP32-C3 control, MOSFET load switching, and enclosure planning to demonstrate practical electrical design thinking from schematic to physical prototype concept.',
-    problem:
-      'Small DC loads are often protected by a simple inline fuse, but a fuse alone does not show load current, voltage condition, overload trend, reverse-polarity risk, or whether the load has been electronically isolated. For a real maintenance or troubleshooting environment, the protection device should also provide visibility, test access, and a clear way to understand the health of the protected circuit.',
-    built:
-      'Designed a KiCad PCB concept for a low-voltage SmartFuse architecture: 12/24V DC input, fuse protection, reverse-polarity and TVS protection, input filtering, buck regulation to 5V, 3.3V logic regulation, ESP32-C3 Wi-Fi control, INA226 voltage/current/power monitoring, low-side MOSFET load switching, status LEDs, buttons, labeled test points, terminal access, and a FreeCAD enclosure mockup. The layout separates protection, regulation, sensing, control, and output switching so the board can be explained and debugged like a real electrical product prototype.',
-    tools: ['KiCad', 'ESP32-C3', 'INA226', 'MOSFET switching', 'DC protection', 'Buck regulation', 'FreeCAD'],
-    impact:
-      'This project connects power protection, embedded control, instrumentation, and maintainability. It shows that I can think beyond drawing a circuit by considering polarity protection, surge suppression, power rails, measurement points, load switching, enclosure fit, and how a technician or engineer would validate the design during commissioning.',
-    icon: ShieldCheck,
-    repoUrl:
-      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Wifi%20Smart%20Fuse%20Project',
-    image: '/images/portfolio/smartfuse-pcb-layout.webp',
-    gallery: [
-      {
-        src: '/images/portfolio/smartfuse-proof-enclosure.webp',
-        alt: 'Transparent enclosure mockup showing the WiFi SmartFuse PCB inside a serviceable housing',
-        label: 'Enclosure fit and board packaging',
-      },
-      {
-        src: '/images/portfolio/smartfuse-pcb-layout.webp',
-        alt: 'KiCad PCB layout showing routing, copper zones, terminals, test points, and component placement for the WiFi SmartFuse PCB',
-        label: 'PCB layout and routing evidence',
-      },
-      {
-        src: '/images/portfolio/smartfuse-proof-board-render.webp',
-        alt: '3D rendered WiFi SmartFuse PCB showing component placement, terminals, buttons, and test points',
-        label: '3D board render and component placement',
-      },
-      {
-        src: '/images/portfolio/smartfuse-proof-schematic-overview.webp',
-        alt: 'KiCad hierarchical schematic overview showing protection, power regulation, sensing, controller, MOSFET switching, and LED test point sheets',
-        label: 'Hierarchical schematic architecture',
-      },
-    ],
-    docUrl: '/documents/wifi-smartfuse',
-    docLabel: 'View Project Document',
-    highlights: [
-      'Organized the design into input protection, regulated power, sensing, controller, user interface, and protected load output stages.',
-      'Used test points, status LEDs, labeled terminals, and a physical enclosure concept to make the design easier to troubleshoot and present.',
-      'Presented as an engineering design and virtual prototype concept, not as a certified or manufactured protection product.',
-    ],
-    featured: true,
-  },
-  {
     slug: 'optical-heart-rate-monitor',
     title: 'Optical Heart Rate Monitor',
     category: 'Analog Instrumentation',
@@ -124,41 +76,89 @@ export const projects: Project[] = [
     title: 'Smart Child Monitoring & Comfort Control System',
     category: 'Controls and IoT Prototype',
     summary:
-      'An embedded controls and IoT prototype designed to monitor comfort-related environmental conditions and respond through alerts and low-voltage outputs. The project combines ESP32-S3 CAM hardware, temperature/humidity sensing, light sensing, sound sensing, dashboard visibility, enclosure thinking, and simple control outputs to show a complete sensor-to-action system.',
+      'An ESP32-S3 CAM based embedded controls project that monitors temperature, humidity, light, and sound, then presents the readings through a browser dashboard while switching low-voltage comfort outputs. The prototype demonstrates the full electrical engineering path from sensor input, regulated power, fused protection, MOSFET output control, enclosure wiring, and C++ web-based monitoring.',
     problem:
-      'Caregivers need a simple way to observe comfort and safety-related conditions without constantly checking the room manually. Temperature, humidity, lighting, and sound levels can change quickly, so the system needs to collect real-time inputs, make the condition visible, and support a practical response before the issue becomes disruptive.',
+      'A child comfort-monitoring system needs more than a single sensor reading. It must collect room conditions, keep the low-voltage electronics powered safely, switch practical loads such as a fan and LED strip, and give the caregiver a clear interface to understand the status. The challenge was to combine sensing, power conversion, output switching, physical packaging, and dashboard visibility into one working prototype.',
     built:
-      'Developed an ESP32-S3 CAM based prototype with DHT11 temperature/humidity sensing, BH1750 light measurement, sound sensing, dashboard monitoring, alert logic, and low-voltage comfort outputs such as a 12V fan and LED indication. The design was documented through project reports, brochure material, system diagrams, and prototype visuals so both the technical function and user need are clear.',
-    tools: ['ESP32-S3 CAM', 'DHT11', 'BH1750', 'Sound sensor', 'Embedded C/C++', 'IoT monitoring'],
+      'Built a low-voltage ESP32-S3 CAM prototype with DHT11 temperature/humidity sensing, BH1750 light measurement, analog sound sensing, LED indicators, buzzer output, a 12V fan output, 12V LED strip output, buck conversion from 12V to 5V, inline fuse protection, capacitor filtering, MOSFET driver circuits, and a browser-accessible dashboard written through the embedded C++/Arduino environment. The final hardware was packaged in a small enclosure with labeled power, fan, LED strip, MOSFET, and adapter connections so the project could be demonstrated as a complete sensor-to-action system.',
+    tools: ['ESP32-S3 CAM', 'DHT11', 'BH1750', 'Sound sensor', 'MOSFET drivers', 'Embedded C/C++', 'Web dashboard'],
     impact:
-      'This project demonstrates the full path from sensing to decision to output control. It is relevant to electrical engineering because it brings together embedded hardware, sensor integration, power/output switching, control logic, documentation, and user-focused system design.',
+      'This project shows practical embedded control work: reading multiple sensors, conditioning power, protecting the input, switching 12V outputs, packaging the electronics, and building a simple human-facing dashboard. It connects electrical design with real-world usability because the prototype is not only wired, but also observable, controllable, and explainable from the hardware layer to the web interface.',
     icon: CircuitBoard,
     repoUrl: 'https://github.com/naman8857/Child-Monitoring-Project-ECE-5000',
-    image: '/images/portfolio/child-monitoring-square.webp',
+    image: '/images/portfolio/child-final-prototype.webp',
     gallery: [
       {
-        src: '/images/portfolio/child-monitoring-square.webp',
-        alt: 'Smart child monitoring system prototype preview',
-        label: 'System prototype',
+        src: '/images/portfolio/child-inside-circuitry.webp',
+        alt: 'Inside circuitry of the smart child monitoring system showing ESP32-S3 CAM, sensors, power components, MOSFET drivers, fuse, capacitor, and wiring',
+        label: 'Inside circuitry and labeled hardware integration',
       },
       {
-        src: '/images/child-brochure.png',
-        alt: 'Smart child monitoring system brochure preview',
-        label: 'Project brochure',
+        src: '/images/portfolio/child-circuit-schematic.webp',
+        alt: 'Circuit schematic for the smart child monitoring system showing 12V input, buck converter, sensors, ESP32-S3 CAM, MOSFET drivers, fan, LED strip, buzzer, and LEDs',
+        label: 'Complete circuit schematic',
       },
       {
-        src: '/images/child-report.png',
-        alt: 'Smart child monitoring system report preview',
-        label: 'Report preview',
+        src: '/images/portfolio/child-web-dashboard.webp',
+        alt: 'Browser dashboard for the smart child monitoring system showing temperature, humidity, light, sound, auto/manual mode, fan control, light control, and alert reset',
+        label: 'C++ web dashboard and live controls',
       },
     ],
     docUrl: '/documents/child-brochure',
     docLabel: 'View Brochure',
     highlights: [
-      'Integrated multiple environmental sensors into one embedded monitoring platform.',
-      'Connected sensor readings to practical outputs such as fan control, LED indication, alerts, and dashboard feedback.',
-      'Documented the design as a complete system with prototype visuals, user-facing explanation, and engineering decision-making.',
+      'Integrated environmental sensing, low-voltage power conversion, fuse protection, MOSFET output switching, and enclosure wiring into one prototype.',
+      'Used embedded C++/Arduino logic to publish a local web dashboard for live readings, mode status, fan/light control, and alert reset.',
+      'Documented the prototype with labeled hardware photos, schematic architecture, and dashboard evidence so the design can be reviewed like an engineering case study.',
     ],
+  },
+  {
+    slug: 'wifi-smartfuse-pcb',
+    title: 'WiFi SmartFuse PCB',
+    category: 'Power Electronics / Embedded Protection',
+    summary:
+      'A portfolio-level 12/24V DC smart protection module designed to show how a basic fuse can be extended into a monitored, switchable, and serviceable protection system. The project combines PCB layout, input protection, regulated logic power, current/voltage sensing, ESP32-C3 control, MOSFET load switching, and enclosure planning to demonstrate practical electrical design thinking from schematic to physical prototype concept.',
+    problem:
+      'Small DC loads are often protected by a simple inline fuse, but a fuse alone does not show load current, voltage condition, overload trend, reverse-polarity risk, or whether the load has been electronically isolated. For a real maintenance or troubleshooting environment, the protection device should also provide visibility, test access, and a clear way to understand the health of the protected circuit.',
+    built:
+      'Designed a KiCad PCB concept for a low-voltage SmartFuse architecture: 12/24V DC input, fuse protection, reverse-polarity and TVS protection, input filtering, buck regulation to 5V, 3.3V logic regulation, ESP32-C3 Wi-Fi control, INA226 voltage/current/power monitoring, low-side MOSFET load switching, status LEDs, buttons, labeled test points, terminal access, and a FreeCAD enclosure mockup. The layout separates protection, regulation, sensing, control, and output switching so the board can be explained and debugged like a real electrical product prototype.',
+    tools: ['KiCad', 'ESP32-C3', 'INA226', 'MOSFET switching', 'DC protection', 'Buck regulation', 'FreeCAD'],
+    impact:
+      'This project connects power protection, embedded control, instrumentation, and maintainability. It shows that I can think beyond drawing a circuit by considering polarity protection, surge suppression, power rails, measurement points, load switching, enclosure fit, and how a technician or engineer would validate the design during commissioning.',
+    icon: ShieldCheck,
+    repoUrl:
+      'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Wifi%20Smart%20Fuse%20Project',
+    image: '/images/portfolio/smartfuse-pcb-layout.webp',
+    gallery: [
+      {
+        src: '/images/portfolio/smartfuse-proof-enclosure.webp',
+        alt: 'Transparent enclosure mockup showing the WiFi SmartFuse PCB inside a serviceable housing',
+        label: 'Enclosure fit and board packaging',
+      },
+      {
+        src: '/images/portfolio/smartfuse-pcb-layout.webp',
+        alt: 'WiFi SmartFuse PCB layout and routing evidence',
+        label: 'PCB layout and routing evidence',
+      },
+      {
+        src: '/images/portfolio/smartfuse-proof-board-render.webp',
+        alt: '3D rendered WiFi SmartFuse PCB showing component placement, terminals, buttons, and test points',
+        label: '3D board render and component placement',
+      },
+      {
+        src: '/images/portfolio/smartfuse-proof-schematic-overview.webp',
+        alt: 'KiCad hierarchical schematic overview showing protection, power regulation, sensing, controller, MOSFET switching, and LED test point sheets',
+        label: 'Hierarchical schematic architecture',
+      },
+    ],
+    docUrl: '/documents/wifi-smartfuse',
+    docLabel: 'View Project Document',
+    highlights: [
+      'Organized the design into input protection, regulated power, sensing, controller, user interface, and protected load output stages.',
+      'Used test points, status LEDs, labeled terminals, and a physical enclosure concept to make the design easier to troubleshoot and present.',
+      'Presented as an engineering design and virtual prototype concept, not as a certified or manufactured protection product.',
+    ],
+    featured: true,
   },
   {
     slug: 'onshape-office-workspace-design',
