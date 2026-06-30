@@ -35,14 +35,14 @@ export const projects: Project[] = [
     title: 'WiFi SmartFuse PCB',
     category: 'Power Electronics / Embedded Protection',
     summary:
-      'A 12/24V DC smart protection PCB concept with fuse protection, sensing, Wi-Fi monitoring, MOSFET switching, and enclosure planning.',
+      'A portfolio-level 12/24V DC smart protection module designed to show how a basic fuse can be extended into a monitored, switchable, and serviceable protection system. The project combines PCB layout, input protection, regulated logic power, current/voltage sensing, ESP32-C3 control, MOSFET load switching, and enclosure planning to demonstrate practical electrical design thinking from schematic to physical prototype concept.',
     problem:
-      'Small 12/24V DC loads need protection plus visibility into current, voltage, load state, and early warning fault conditions.',
+      'Small DC loads are often protected by a simple inline fuse, but a fuse alone does not show load current, voltage condition, overload trend, reverse-polarity risk, or whether the load has been electronically isolated. For a real maintenance or troubleshooting environment, the protection device should also provide visibility, test access, and a clear way to understand the health of the protected circuit.',
     built:
-      'Designed a KiCad PCB concept with fuse protection, reverse-polarity and TVS protection, buck regulation, ESP32-C3 Wi-Fi control, INA226 monitoring, MOSFET load switching, LEDs, buttons, test points, and a FreeCAD enclosure mockup.',
+      'Designed a KiCad PCB concept for a low-voltage SmartFuse architecture: 12/24V DC input, fuse protection, reverse-polarity and TVS protection, input filtering, buck regulation to 5V, 3.3V logic regulation, ESP32-C3 Wi-Fi control, INA226 voltage/current/power monitoring, low-side MOSFET load switching, status LEDs, buttons, labeled test points, terminal access, and a FreeCAD enclosure mockup. The layout separates protection, regulation, sensing, control, and output switching so the board can be explained and debugged like a real electrical product prototype.',
     tools: ['KiCad', 'ESP32-C3', 'INA226', 'MOSFET switching', 'DC protection', 'Buck regulation', 'FreeCAD'],
     impact:
-      'Connects industrial protection thinking with embedded power electronics by turning a basic DC fuse idea into a monitored, switchable, serviceable protection module concept.',
+      'This project connects power protection, embedded control, instrumentation, and maintainability. It shows that I can think beyond drawing a circuit by considering polarity protection, surge suppression, power rails, measurement points, load switching, enclosure fit, and how a technician or engineer would validate the design during commissioning.',
     icon: ShieldCheck,
     repoUrl:
       'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Wifi%20Smart%20Fuse%20Project',
@@ -67,9 +67,9 @@ export const projects: Project[] = [
     docUrl: '/documents/wifi-smartfuse',
     docLabel: 'View Project Document',
     highlights: [
-      'Structured the design around input protection, regulated logic power, sensing, control, and protected load output stages.',
-      'Added debug test points, status LEDs, and serviceable terminal access to make the board easier to validate and explain.',
-      'Presented as a design and virtual prototype, not as a manufactured or certified protection product.',
+      'Organized the design into input protection, regulated power, sensing, controller, user interface, and protected load output stages.',
+      'Used test points, status LEDs, labeled terminals, and a physical enclosure concept to make the design easier to troubleshoot and present.',
+      'Presented as an engineering design and virtual prototype concept, not as a certified or manufactured protection product.',
     ],
     featured: true,
   },
@@ -78,14 +78,14 @@ export const projects: Project[] = [
     title: 'Optical Heart Rate Monitor',
     category: 'Analog Instrumentation',
     summary:
-      'An analog optical pulse circuit that turns a weak noisy sensor signal into a visible pulse indication using filtering, amplification, and threshold logic.',
+      'An analog instrumentation project that converts a weak optical pulse signal into a measurable and visible heartbeat indication. The project demonstrates sensor interfacing, op-amp signal conditioning, filtering, threshold detection, timing logic, breadboard debugging, and oscilloscope-based validation.',
     problem:
-      'Optical pulse changes are small and noisy, so the signal needs careful sensing, filtering, amplification, and threshold detection.',
+      'The optical change caused by blood flow is very small compared with noise, ambient light effects, and sensor variation. To make the pulse usable, the circuit must detect a weak analog signal, filter unwanted components, amplify it without saturating, and convert it into a clean output that can be counted or displayed.',
     built:
-      'Built and validated a low-voltage optical heart-rate monitor with an IR sensing front end, cascaded op-amp stages, threshold logic, and LED pulse alerts.',
+      'Built and validated a low-voltage optical heart-rate monitor using an IR sensing front end, cascaded op-amp amplification and filtering stages, threshold/trigger logic, 555-timer-based pulse shaping, and LED pulse indication. The circuit was tested stage-by-stage on a breadboard and verified using oscilloscope captures to compare the raw and conditioned waveforms.',
     tools: ['IR optical sensing', 'Op-amp filtering', 'Schmitt trigger', '555 timer', 'Oscilloscope validation'],
     impact:
-      'Shows instrumentation fundamentals, analog signal conditioning, test discipline, and practical circuit debugging.',
+      'This project shows practical analog electronics skills that are directly useful in instrumentation and controls work: reading a sensor signal, conditioning it, validating it with test equipment, and troubleshooting each stage instead of treating the circuit like a black box.',
     icon: Thermometer,
     repoUrl: 'https://github.com/naman8857/Optical-Heart-Rate-Monitor-Project',
     image: '/images/portfolio/heart-rate-square.webp',
@@ -109,9 +109,9 @@ export const projects: Project[] = [
     docUrl: '/documents/heart-rate-report',
     docLabel: 'View Report',
     highlights: [
-      'Translated a weak optical waveform into a usable electrical signal.',
-      'Used filtering, amplification, and threshold logic to produce repeatable pulse indication.',
-      'Verified circuit behavior with oscilloscope testing and documented measured results.',
+      'Converted a weak and noisy optical waveform into a usable electrical pulse signal.',
+      'Applied amplification, filtering, threshold detection, and timing logic to improve repeatability.',
+      'Used oscilloscope validation to confirm circuit behavior and document measured results.',
     ],
   },
   {
@@ -119,14 +119,14 @@ export const projects: Project[] = [
     title: 'Smart Child Monitoring & Comfort Control System',
     category: 'Controls and IoT Prototype',
     summary:
-      'An ESP32-based comfort monitoring prototype with environmental sensing, dashboard visibility, alerts, and low-voltage control outputs.',
+      'An embedded controls and IoT prototype designed to monitor comfort-related environmental conditions and respond through alerts and low-voltage outputs. The project combines ESP32-S3 CAM hardware, temperature/humidity sensing, light sensing, sound sensing, dashboard visibility, enclosure thinking, and simple control outputs to show a complete sensor-to-action system.',
     problem:
-      'Caregivers need a simple way to monitor environmental comfort conditions and respond to alerts before they become operational issues.',
+      'Caregivers need a simple way to observe comfort and safety-related conditions without constantly checking the room manually. Temperature, humidity, lighting, and sound levels can change quickly, so the system needs to collect real-time inputs, make the condition visible, and support a practical response before the issue becomes disruptive.',
     built:
-      'Developed an ESP32-S3 CAM prototype with temperature, light, and sound sensing, dashboard monitoring, alerting, and comfort control outputs.',
+      'Developed an ESP32-S3 CAM based prototype with DHT11 temperature/humidity sensing, BH1750 light measurement, sound sensing, dashboard monitoring, alert logic, and low-voltage comfort outputs such as a 12V fan and LED indication. The design was documented through project reports, brochure material, system diagrams, and prototype visuals so both the technical function and user need are clear.',
     tools: ['ESP32-S3 CAM', 'DHT11', 'BH1750', 'Sound sensor', 'Embedded C/C++', 'IoT monitoring'],
     impact:
-      'Shows sensor integration, automation logic, device testing, and readable technical documentation.',
+      'This project demonstrates the full path from sensing to decision to output control. It is relevant to electrical engineering because it brings together embedded hardware, sensor integration, power/output switching, control logic, documentation, and user-focused system design.',
     icon: CircuitBoard,
     repoUrl: 'https://github.com/naman8857/Child-Monitoring-Project-ECE-5000',
     image: '/images/portfolio/child-monitoring-square.webp',
@@ -150,9 +150,9 @@ export const projects: Project[] = [
     docUrl: '/documents/child-brochure',
     docLabel: 'View Brochure',
     highlights: [
-      'Monitored temperature, humidity, light intensity, and sound level as real-time comfort inputs.',
-      'Used low-voltage 12V fan and LED outputs to connect sensing with practical comfort control.',
-      'Packaged the system around alerts, protected power, switched outputs, and a physical enclosure concept.',
+      'Integrated multiple environmental sensors into one embedded monitoring platform.',
+      'Connected sensor readings to practical outputs such as fan control, LED indication, alerts, and dashboard feedback.',
+      'Documented the design as a complete system with prototype visuals, user-facing explanation, and engineering decision-making.',
     ],
   },
   {
@@ -160,14 +160,14 @@ export const projects: Project[] = [
     title: 'Onshape Office Workspace Design',
     category: 'Engineering CAD / Design Communication',
     summary:
-      'A first-year CAD project that models an office workspace with layout views, perspective views, section thinking, and documentation outputs.',
+      'A first-year CAD design project that models a complete office workspace and presents it through clear views, layout planning, and documentation-style visuals. The project shows how CAD can be used as an engineering communication tool for planning space, equipment access, work areas, lighting, furniture, and possible electrical/control-room considerations before physical work begins.',
     problem:
-      'Engineering layouts need clear views before physical work starts so equipment, access, furniture, lighting, and possible electrical points can be understood early.',
+      'Engineering spaces need to be planned before installation so equipment, access paths, work areas, lighting, furniture, storage, and service clearances can be understood early. Without clear CAD views, design intent is harder to communicate and later changes can become more expensive or confusing.',
     built:
-      'Modeled a complete office workspace in Onshape with walls, doors, windows, furniture, rest area, work area, storage, plant wall features, perspective views, layout views, and drawing sheets.',
+      'Modeled a complete office workspace in Onshape with walls, doors, windows, desks, storage, seating/rest areas, work zones, plant wall features, perspective views, top layout views, and documentation outputs. The model was built to practice CAD fundamentals while also thinking like an electrical engineering student who may later review layouts, panel locations, cable routes, control rooms, and as-built drawings.',
     tools: ['Onshape', '3D CAD', '2D drawings', 'Section views', 'Layout planning', 'Technical documentation'],
     impact:
-      'Shows spatial planning and design communication skills that transfer to electrical layouts, control rooms, panel spacing, HMI desk planning, cable routing, lighting plans, and as-built documentation.',
+      'This project frames CAD as more than a drawing exercise. It shows design communication, spatial reasoning, layout clarity, and documentation discipline that transfer directly to electrical drawings, panel layouts, equipment placement, HMI/control-room planning, and field as-built work.',
     icon: Building2,
     repoUrl:
       'https://github.com/naman8857/naman-portfolio/tree/master/public/images/Onshape%20Project',
@@ -192,9 +192,9 @@ export const projects: Project[] = [
     docUrl: '/documents/onshape-office',
     docLabel: 'View Project Document',
     highlights: [
-      'Created multiple views so the model can be reviewed from both spatial and documentation perspectives.',
-      'Practiced section-view thinking, layout clarity, and drawing-sheet communication from first-year CAD work.',
-      'Frames CAD as an electrical engineering skill for planning equipment locations, access, and documentation.',
+      'Created multiple CAD views so the design can be reviewed from both spatial and documentation perspectives.',
+      'Practiced layout planning, view organization, and drawing-sheet communication using Onshape.',
+      'Connected first-year CAD learning to electrical engineering tasks such as equipment placement, access planning, and as-built documentation.',
     ],
   },
 ];
