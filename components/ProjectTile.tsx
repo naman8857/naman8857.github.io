@@ -59,22 +59,22 @@ export function ProjectTile({ project }: { project: Project }) {
           ) : null}
         </div>
 
-        <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row sm:flex-wrap">
+        <div className="mt-auto grid grid-cols-2 gap-3 pt-6">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-slate-950 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             View Project
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 shrink-0" />
           </Link>
           <a
             href={project.repoUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+            className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
           >
             {project.repoLabel ?? 'GitHub'}
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 shrink-0" />
           </a>
         </div>
       </div>

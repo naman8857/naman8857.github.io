@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, GitBranch } from 'lucide-react';
 
 export const metadata = {
-  title: 'SIMOCODE Motor Monitoring Handover Guide - Naman Arora',
+  title: 'Motor Protection Relay Automation Gateway Handover Guide - Naman Arora',
   description:
     'Browser-viewable commissioning and troubleshooting guide for the Siemens SIMOCODE to SEL RTAC motor monitoring integration project.',
 };
@@ -65,7 +65,7 @@ export default function SimocodeDocumentPage() {
                 Industrial automation · motor protection
               </p>
               <h1 className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                SIMOCODE Motor Monitoring Handover Guide
+                Motor Protection Relay Automation Gateway Handover Guide
               </h1>
               <p className="mt-4 max-w-4xl text-base leading-7 text-slate-600 md:text-lg">
                 This browser-viewable handover guide summarizes the commissioning logic, proof points, and troubleshooting
@@ -74,7 +74,7 @@ export default function SimocodeDocumentPage() {
               </p>
             </div>
             <a
-              href="https://github.com/naman8857/naman8857.github.io"
+              href="https://github.com/naman8857/Siemens-SIMOCODE-to-SEL-RTAC-Motor-Monitoring"
               target="_blank"
               rel="noreferrer"
               className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"

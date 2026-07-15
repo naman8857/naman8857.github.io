@@ -21,7 +21,7 @@ export default async function ProjectDetailPage({
   }
 
   const Icon = project.icon;
-  const heroImageClassName = project.imageFit === 'contain' ? 'object-contain p-4' : 'object-cover';
+  const heroImageClassName = (project.heroImageFit ?? project.imageFit) === 'contain' ? 'object-contain p-4' : 'object-cover';
   const hasThreeProofImages = project.gallery.length === 3;
 
   return (
