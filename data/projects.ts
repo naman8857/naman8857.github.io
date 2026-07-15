@@ -1,6 +1,7 @@
 import {
   Building2,
   CircuitBoard,
+  RadioTower,
   ShieldCheck,
   Thermometer,
   type LucideIcon,
@@ -11,15 +12,20 @@ export type Project = {
   title: string;
   cardTitle?: string;
   category: string;
+  pageCategory?: string;
   summary: string;
+  heroDescription?: string;
   problem: string;
   built: string;
   tools: string[];
   impact: string;
   icon: LucideIcon;
   repoUrl: string;
+  repoLabel?: string;
   image: string;
   imageFit?: 'cover' | 'contain';
+  heroImage?: string;
+  heroImageFit?: 'cover' | 'contain';
   gallery: {
     src: string;
     alt: string;
@@ -32,6 +38,68 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: 'simocode-motor-monitoring-integration',
+    title: 'SIMOCODE Motor Monitoring Integration',
+    category: 'Industrial Automation',
+    pageCategory: 'Industrial Automation · Motor Protection',
+    summary:
+      'An industrial communication system that brings motor protection and operating data from Siemens SIMOCODE devices into an SEL RTAC. The project combines PROFIBUS DP, Modbus TCP, gateway configuration, tag mapping, troubleshooting, and HMI-ready motor status signals.',
+    heroDescription:
+      'Designed and validated an industrial motor-monitoring path between Siemens SIMOCODE pro C devices and an SEL-3555 RTAC using a ProSoft PLX51-PBM gateway. The system transfers motor faults, warnings, overload conditions, and current-based load information from PROFIBUS DP into organized Modbus TCP tags that can be used for RTAC logic and HMI displays.',
+    problem:
+      'SIMOCODE motor-management devices communicate over PROFIBUS DP, while the SEL RTAC used for plant monitoring does not directly read that network. The information therefore had to pass through several layers: the SIMOCODE configuration, PROFIBUS wiring, the ProSoft gateway, Modbus registers, RTAC tags, and finally the HMI. A problem at any one of these layers could cause the motor to appear offline or produce incorrect values. The main challenge was not simply connecting the devices—it was proving where the communication stopped when something went wrong.',
+    built:
+      'Configured the SIMOCODE devices as PROFIBUS slaves and the PLX51-PBM as the PROFIBUS master and Modbus TCP server. Motor information was organized into dedicated register blocks and then read by the SEL RTAC as raw holding registers. The raw status words were decoded into simple HMI signals for group fault, group warning, overload prewarning, and load percentage. Communication was validated one layer at a time using device LEDs, the PROFIBUS live list, Data Exchange status, Modbus statistics, and live RTAC tag values.',
+    tools: [
+      'Siemens SIMOCODE ES / TIA Portal',
+      'ProSoft PLX50 Configuration Utility',
+      'SEL ACSELERATOR RTAC',
+      'SEL Diagram Builder',
+      'PROFIBUS DP',
+      'Modbus TCP',
+      'Industrial Ethernet',
+      'Motor protection',
+      'Register and bit mapping',
+      'Communication diagnostics',
+    ],
+    impact:
+      'The project created a repeatable method for bringing intelligent motor information into the plant automation system without replacing the existing SIMOCODE equipment. Instead of providing only a working bench configuration, the project produced an expandable architecture, a consistent register-allocation method, commissioning checks, troubleshooting guidance, and an HMI structure. This makes future motor additions easier and helps maintenance personnel identify whether a problem is in the motor device, PROFIBUS network, gateway, Ethernet connection, RTAC mapping, or HMI.',
+    icon: RadioTower,
+    repoUrl: 'https://github.com/naman8857/naman8857.github.io',
+    repoLabel: 'GitHub / Project Assets',
+    image: '/images/portfolio/simocode-card.webp',
+    imageFit: 'contain',
+    heroImage: '/images/portfolio/simocode-hero.webp',
+    heroImageFit: 'contain',
+    gallery: [
+      {
+        src: '/images/portfolio/simocode-architecture.webp',
+        alt: 'Architecture diagram showing the PLX51-PBM master, multiple SIMOCODE devices on PROFIBUS, and the termination strategy for first, middle, and last stations.',
+        label: 'Scalable PROFIBUS architecture and termination layout',
+      },
+      {
+        src: '/images/portfolio/simocode-live-list.webp',
+        alt: 'PLX51-PBM live list screen showing the DP master and discovered PROFIBUS slave nodes exchanging data.',
+        label: 'PLX51-PBM live list and node-status validation',
+      },
+      {
+        src: '/images/portfolio/simocode-termination.webp',
+        alt: 'Close-up image of the PROFIBUS connector on the PLX51-PBM with termination enabled for the first station.',
+        label: 'Connector-level termination detail at the gateway',
+      },
+    ],
+    docUrl: '/documents/simocode-motor-monitoring',
+    docLabel: 'View Handover Guide',
+    highlights: [
+      'Verified the system in the correct order: SIMOCODE → PROFIBUS → PLX gateway → Modbus TCP → RTAC tags → HMI.',
+      'Assigned each motor its own register block, starting with base addresses 0 and 10, so future devices can be added without overlapping data.',
+      'Decoded packed status words into clear operator-facing signals: overload prewarning, group fault, group warning, and communication health.',
+      'Labelled the analog value correctly as Load % — Imax as a percentage of the configured motor current, rather than presenting it incorrectly as electrical power.',
+      'Kept the first phase monitoring-focused; remote start/stop control was intentionally not enabled without separate operational approval and interlock review.',
+    ],
+    featured: true,
+  },
   {
     slug: 'optical-heart-rate-monitor',
     title: 'Optical Heart Rate Monitor',

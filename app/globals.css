@@ -205,3 +205,14 @@ body {
     min-height: 430px;
   }
 }
+
+.project-rail {
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-rail::-webkit-scrollbar {
+  display: none;
+}

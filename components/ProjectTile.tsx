@@ -73,7 +73,7 @@ export function ProjectTile({ project }: { project: Project }) {
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
           >
-            GitHub
+            {project.repoLabel ?? 'GitHub'}
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>

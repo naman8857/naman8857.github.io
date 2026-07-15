@@ -43,14 +43,14 @@ export default async function ProjectDetailPage({
                   <Icon className="h-5 w-5" />
                 </div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
-                  {project.category}
+                  {project.pageCategory ?? project.category}
                 </p>
               </div>
               <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
                 {project.title}
               </h1>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
-                {project.summary}
+                {project.heroDescription ?? project.summary}
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({
             <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/80">
               <div className="relative aspect-[16/10] bg-white">
                 <Image
-                  src={project.image}
+                  src={project.heroImage ?? project.image}
                   alt={`${project.title} main project image`}
                   fill
                   priority

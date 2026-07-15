@@ -23,7 +23,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react';
-import { ProjectTile } from '@/components/ProjectTile';
+import { ProjectRail } from '@/components/ProjectRail';
 import { projects } from '@/data/projects';
 
 type SkillGroup = {
@@ -541,13 +541,7 @@ export default function Home() {
             text="Each project opens as a small engineering case study: the problem, the design decisions, the implementation evidence, and the proof that the work can be inspected."
           />
 
-          <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {projects.map((project) => (
-              <motion.div key={project.slug} {...fadeUp} className="h-full">
-                <ProjectTile project={project} />
-              </motion.div>
-            ))}
-          </div>
+          <ProjectRail projects={projects} />
         </div>
       </section>
 
