@@ -54,19 +54,23 @@ export default async function ProjectDetailPage({
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
-                  GitHub / Project Assets
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                {project.repoUrl ? (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  >
+                    {project.repoLabel ?? 'GitHub / Project Assets'}
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                ) : null}
                 {project.docUrl ? (
                   <Link
                     href={project.docUrl}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+                    className={project.repoUrl
+                      ? 'inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50'
+                      : 'inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800'}
                   >
                     {project.docLabel ?? 'View Document'}
                     <FileText className="h-4 w-4" />
@@ -89,6 +93,15 @@ export default async function ProjectDetailPage({
             </div>
           </div>
         </header>
+
+
+        {project.status ? (
+          <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50/70 px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-800">Validation status</p>
+            <p className="mt-2 text-base font-semibold text-slate-950">{project.status.label}</p>
+            <p className="mt-2 max-w-5xl text-sm leading-6 text-slate-700">{project.status.detail}</p>
+          </section>
+        ) : null}
 
         <section className="grid gap-4 md:grid-cols-3">
           {[
@@ -153,7 +166,13 @@ export default async function ProjectDetailPage({
                     ? `${hasThreeProofImages ? 'md:col-span-2' : 'md:col-span-3'} overflow-hidden rounded-xl border border-slate-200 bg-white`
                     : 'overflow-hidden rounded-xl border border-slate-200 bg-white'}
                 >
-                  <div className={index === 0 || hasThreeProofImages ? 'relative aspect-[16/9]' : 'relative aspect-[4/3]'}>
+                  <a
+                    href={item.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`${index === 0 || hasThreeProofImages ? 'relative aspect-[16/9]' : 'relative aspect-[4/3]'} block bg-white transition hover:bg-slate-50`}
+                    aria-label={`Open full-size image: ${item.label}`}
+                  >
                     <Image
                       src={item.src}
                       alt={item.alt}
@@ -161,9 +180,18 @@ export default async function ProjectDetailPage({
                       className="object-contain"
                       sizes={index === 0 ? '(max-width: 1024px) 100vw, 820px' : hasThreeProofImages ? '(max-width: 1024px) 100vw, 420px' : '(max-width: 1024px) 100vw, 260px'}
                     />
-                  </div>
-                  <figcaption className="border-t border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-600">
-                    {item.label}
+                  </a>
+                  <figcaption className="flex items-center justify-between gap-3 border-t border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-600">
+                    <span>{item.label}</span>
+                    <a
+                      href={item.src}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex shrink-0 items-center gap-1 text-teal-700 hover:text-teal-800"
+                    >
+                      Open
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
                   </figcaption>
                 </figure>
               ))}

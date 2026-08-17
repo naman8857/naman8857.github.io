@@ -20,7 +20,7 @@ export type Project = {
   tools: string[];
   impact: string;
   icon: LucideIcon;
-  repoUrl: string;
+  repoUrl?: string;
   repoLabel?: string;
   image: string;
   imageFit?: 'cover' | 'contain';
@@ -34,6 +34,10 @@ export type Project = {
   docUrl?: string;
   docLabel?: string;
   highlights: string[];
+  status?: {
+    label: string;
+    detail: string;
+  };
   featured?: boolean;
 };
 
@@ -99,6 +103,72 @@ export const projects: Project[] = [
       'Labelled the analog value correctly as Load % — Imax as a percentage of the configured motor current, rather than presenting it incorrectly as electrical power.',
       'Kept the first phase monitoring-focused; remote start/stop control was intentionally not enabled without separate operational approval and interlock review.',
     ],
+    featured: true,
+  },
+  {
+    slug: 'wireless-protection-relay-integration',
+    title: 'Wireless Protection Relay Integration over 900 MHz Industrial Radio',
+    cardTitle: 'Wireless Protection Relay Integration',
+    category: 'Protection & Industrial Communications',
+    pageCategory: 'Protection & Automation · Industrial Wireless · Serial Protocols',
+    summary:
+      'Designed and bench-validated a wireless serial path between an SEL-3555 RTAC and SEL-751 feeder relay through Phoenix Contact RAD-900-IFS radios. The project proved Modbus RTU end-to-end, then moved to native SEL protocol while isolating framing, DTE/DCE wiring, return-path, and timeout issues with measured evidence.',
+    heroDescription:
+      'Built a layered industrial communications test between an SEL-3555 RTAC and SEL-751 feeder protection relay using two Phoenix Contact RAD-900-IFS 900 MHz radios. I first established a known-good Modbus RTU path, then migrated the link to native SEL serial communication over EIA-232 and used RTAC captures, radio diagnostics, continuity checks, and live serial-voltage measurements to prove where each failure occurred.',
+    problem:
+      'A direct serial cable is simple on a bench, but industrial equipment can be separated by distance, retrofit constraints, and difficult cable routes. The challenge was to transport relay data transparently through a wireless link without confusing electrical activity with valid communication. The complete path included the RTAC, two serial interfaces, the radio pair, the relay, and—in the Modbus proof-of-concept—the SEL-2886 converter. A fault at any layer could look like the same generic Offline condition.',
+    built:
+      'Started with direct communication so the RTAC and SEL-751 endpoints were proven before adding the radios. I then brought Modbus RTU online through the RAD-900 pair over EIA-485, mapped relay data into the RTAC, and used the Communication Monitor to separate transmitted bytes, returned bytes, and successful protocol transactions. For native SEL protocol, I simplified the path to EIA-232, standardized the full chain to 9600 baud, 8-N-1, disabled flow control, applied the RAD-900 DCE wiring rule, measured RS-232 idle voltages, traced the return path, and tuned timeouts only after observing real wireless response delays.',
+    tools: [
+      'SEL-751',
+      'SEL-3555 RTAC',
+      'Phoenix RAD-900-IFS',
+      'Modbus RTU',
+      'SEL Protocol',
+      'EIA-232 / EIA-485',
+      'acSELerator RTAC',
+      'acSELerator QuickSet',
+      'Phoenix PSI-CONF',
+      'Serial diagnostics',
+    ],
+    impact:
+      'The project demonstrates evidence-based commissioning rather than trial-and-error configuration. Direct Modbus, Modbus through the radios, and direct SEL communication were proven, and readable SEL-751 responses were transported in both directions through the radio pair. The final report deliberately keeps the remaining boundary visible: the transport layer was proven, while the RTAC SEL-client session still required final online-state and power-cycle acceptance testing.',
+    icon: RadioTower,
+    image: '/images/portfolio/radio-wireless-hero.webp',
+    imageFit: 'cover',
+    heroImage: '/images/portfolio/radio-wireless-hero.webp',
+    heroImageFit: 'cover',
+    gallery: [
+      {
+        src: '/images/portfolio/radio-wireless-bench.webp',
+        alt: 'Complete wireless serial bench showing the SEL RTAC automation system, master and remote Phoenix RAD-900 radios, 24 VDC power, and SEL-751 feeder protection relay.',
+        label: 'Complete bench architecture and wireless serial signal path',
+      },
+      {
+        src: '/images/portfolio/radio-rtac-comm-monitor.webp',
+        alt: 'acSELerator RTAC Communication Monitor and Modbus controller view used to validate serial traffic and successful transactions through the radio path.',
+        label: 'RTAC Communication Monitor and protocol-level validation',
+      },
+      {
+        src: '/images/portfolio/radio-phoenix-diagnostics.webp',
+        alt: 'Phoenix Contact PSI-CONF diagnostic overview showing the RAD-900 wireless radio pair and link diagnostics.',
+        label: 'Phoenix RAD-900 pair diagnostics in PSI-CONF',
+      },
+    ],
+    docUrl: '/documents/SEL_751_RTAC_RAD900_Project_Report.pdf',
+    docLabel: 'View Engineering Report',
+    highlights: [
+      'Proved the communication stack in layers: direct endpoint tests first, then Modbus through the wireless path, then native SEL protocol.',
+      'Resolved a key UART mismatch by moving the SEL path from the earlier 8-N-2 Modbus framing to 9600 baud, 8-N-1 across the RTAC, both radios, and relay.',
+      'Applied the RAD-900 DCE signal rule correctly: device TX to radio RX, radio TX to device RX, and signal ground to ground.',
+      'Used live RS-232 voltage measurements and directional radio LED behavior to isolate a return-path wiring fault that continuity checks alone did not reveal.',
+      'Kept the acceptance boundary explicit: readable two-way SEL traffic was proven through the radios, while final RTAC SEL-client online/session acceptance remained open at the report issue point.',
+    ],
+    status: {
+      label: 'Transport validated · final SEL session acceptance open',
+      detail:
+        'Direct Modbus RTU, Modbus RTU through the radio pair, and direct SEL Protocol passed. Readable two-way SEL-751 traffic crossed the wireless link; the remaining open item is stable RTAC SEL-client online/session acceptance and recovery after power cycling.',
+    },
     featured: true,
   },
   {

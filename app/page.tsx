@@ -6,7 +6,6 @@ import {
   ArrowRight,
   BarChart3,
   Building2,
-  Check,
   CircuitBoard,
   Database,
   FileText,
@@ -23,6 +22,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react';
+import { ExperienceShowcase } from '@/components/ExperienceShowcase';
 import { ProjectRail } from '@/components/ProjectRail';
 import { projects } from '@/data/projects';
 
@@ -33,15 +33,6 @@ type SkillGroup = {
   items: string[];
 };
 
-type Experience = {
-  company: string;
-  title: string;
-  location: string;
-  period: string;
-  focus: string;
-  points: string[];
-  tools: string[];
-};
 
 const navItems = ['Skills', 'Experience', 'Projects', 'Contact'];
 
@@ -121,59 +112,6 @@ const skills: SkillGroup[] = [
   },
 ];
 
-const experience: Experience[] = [
-  {
-    company: 'Irving Oil',
-    title: 'Electrical & Instrumentation Reliability Engineering Co-op',
-    location: 'Saint John, NB, Canada',
-    period: 'May 2026 - Present',
-    focus: 'Refinery reliability, power distribution, instrumentation, and control-system support.',
-    points: [
-      'Support refinery electrical and instrumentation reliability through field analysis, failure investigations, and design reviews on low-, medium-, and high-voltage systems.',
-      'Assist power distribution and substation maintenance by validating P&IDs and drawings, supporting design changes, and improving long-term electrical asset performance.',
-      'Work with MODBUS, PROFIBUS, ProSoft gateways, HMI/SCADA systems, automation control systems, and motor management relays for device management, troubleshooting, and reliable operation.',
-    ],
-    tools: ['Reliability', 'P&IDs', 'Substations', 'HMI/SCADA', 'MODBUS', 'PROFIBUS'],
-  },
-  {
-    company: 'Brightisle',
-    title: 'Data Analyst, Remote Part-time',
-    location: 'St. Johns, NL, Canada',
-    period: 'Apr 2025 - Present',
-    focus: 'Operational reporting, healthcare program visibility, and process automation.',
-    points: [
-      'Maintain and enhance Power BI and Tableau dashboards in Microsoft Fabric, improving operational visibility, schedule tracking, and planning support across healthcare programs.',
-      'Develop automated workflows and data systems using Power Automate, SharePoint, SQL, and Python to improve process reliability, data accuracy, and reporting speed.',
-    ],
-    tools: ['Power BI', 'Tableau', 'Microsoft Fabric', 'SQL', 'Python', 'Power Automate'],
-  },
-  {
-    company: 'Irving Oil',
-    title: 'Electrical Engineering Intern Co-op',
-    location: 'Saint John, NB, Canada',
-    period: 'Sept 2025 - Dec 2025',
-    focus: 'Refinery electrical design, heat-trace reliability, ETAP studies, and Co-Gen integration support.',
-    points: [
-      'Designed and revised EHT circuits and AutoCAD drawings, completed load calculations, and configured PLC logic and EHT controllers for refinery electrical systems.',
-      'Performed field troubleshooting of heat-trace systems and instrumentation by verifying continuity, resolving faults, and improving system reliability and uptime.',
-      'Built and updated an ETAP model for part of the refinery, performing load flow, short-circuit, arc-flash, and protection studies.',
-      'Supported the Co-Gen integration project through equipment assessments, ETAP studies, and electrical drawing updates for safe and reliable tie-in execution.',
-    ],
-    tools: ['ETAP', 'AutoCAD', 'EHT', 'PLC Logic', 'Arc Flash', 'Co-Gen'],
-  },
-  {
-    company: 'Seafair Capital',
-    title: 'Project Management Intern Co-op',
-    location: 'St. Johns, NL, Canada',
-    period: 'Jan 2025 - Apr 2025',
-    focus: 'Cross-company process improvement, dashboards, payroll systems, and workflow automation.',
-    points: [
-      'Led payroll and HR process improvements, delivering Python, SQL, Power Automate, and Power Apps solutions that cut manual work by 50%.',
-      'Built Power BI and Tableau dashboards and automated data pipelines across BlueSky, Momentum, and Caregivers, enabling real-time monitoring and faster issue detection.',
-    ],
-    tools: ['Python', 'SQL', 'Power Apps', 'Power BI', 'Tableau', 'Automation'],
-  },
-];
 
 const reasons = [
   {
@@ -484,54 +422,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="px-4 py-12 sm:px-6 md:py-20">
-        <div className="portfolio-container mx-auto">
-          <SectionHeading
-            eyebrow="Experience"
-            title="Professional experience built around industrial systems."
-            text="The timeline now highlights the refinery, reliability, power, controls, and process automation work that best matches electrical engineering roles."
-          />
-
-          <div className="relative mx-auto max-w-6xl">
-            <div className="absolute bottom-8 left-4 top-8 hidden w-px bg-gradient-to-b from-teal-500 via-slate-300 to-transparent md:block" />
-            <div className="space-y-5">
-              {experience.map((role) => (
-                <motion.article key={`${role.company}-${role.period}`} {...fadeUp} className="relative md:pl-12">
-                  <div className="absolute left-2 top-7 hidden h-4 w-4 rounded-full border border-teal-600 bg-white md:block" />
-                  <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/80">
-                    <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-teal-700">{role.company}</p>
-                        <h3 className="mt-1 text-xl font-semibold tracking-tight text-slate-950">
-                          {role.title}
-                        </h3>
-                        <p className="mt-1 text-sm text-slate-500">{role.location}</p>
-                      </div>
-                      <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
-                        {role.period}
-                      </span>
-                    </div>
-                    <p className="mt-4 text-sm font-semibold leading-6 text-slate-700">{role.focus}</p>
-                    <div className="mt-4 grid gap-2">
-                      {role.points.map((point) => (
-                        <div key={point} className="flex gap-3 text-sm leading-6 text-slate-600">
-                          <Check className="mt-1 h-4 w-4 shrink-0 text-teal-700" />
-                          <span>{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {role.tools.map((tool) => (
-                        <Pill key={tool}>{tool}</Pill>
-                      ))}
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ExperienceShowcase />
 
       <section id="projects" className="border-y border-slate-200 bg-slate-50 px-4 py-12 sm:px-6 md:py-20">
         <div className="portfolio-container mx-auto">
